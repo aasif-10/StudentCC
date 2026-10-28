@@ -84,47 +84,48 @@
     <color name="colorOutlineGreen">#334155</color>
     <color name="colorOutlineVariantGreen">#1E293B</color>
 
-    <!-- Black/Neutral Theme Colors (Dark Mode) -->
+    <!-- Black/Neutral Theme Colors (Dark Mode) - Modern Obsidian with Gradient Tiles -->
     <color name="colorPrimaryBlack">#FFFFFF</color>
-    <color name="colorOnPrimaryBlack">#000000</color>
-    <color name="colorPrimaryContainerBlack">#000000</color>
+    <color name="colorOnPrimaryBlack">#111115</color>
+    <color name="colorPrimaryContainerBlack">#22232A</color>
     <color name="colorOnPrimaryContainerBlack">#FFFFFF</color>
-    <color name="colorSecondaryBlack">#CCCCCC</color>
-    <color name="colorOnSecondaryBlack">#000000</color>
-    <color name="colorSecondaryContainerBlack">#111111</color>
+    <color name="colorSecondaryBlack">#B0B2BD</color>
+    <color name="colorOnSecondaryBlack">#111115</color>
+    <color name="colorSecondaryContainerBlack">#1F2026</color>
     <color name="colorOnSecondaryContainerBlack">#FFFFFF</color>
-    <color name="colorSurfaceBlack">#000000</color>
+    <color name="colorSurfaceBlack">#18191E</color>
     <color name="colorOnSurfaceBlack">#FFFFFF</color>
-    <color name="colorSurfaceVariantBlack">#000000</color>
-    <color name="colorOnSurfaceVariantBlack">#CCCCCC</color>
-    <color name="colorBackgroundBlack">#000000</color>
-    <color name="colorErrorBlack">#FFFFFF</color>
-    <color name="colorOnErrorBlack">#000000</color>
-    <color name="colorErrorContainerBlack">#111111</color>
-    <color name="colorOnErrorContainerBlack">#FFFFFF</color>
-    <color name="colorOutlineBlack">#FFFFFF</color>
-    <color name="colorOutlineVariantBlack">#333333</color>
+    <color name="colorSurfaceVariantBlack">#22232A</color>
+    <color name="colorOnSurfaceVariantBlack">#9496A1</color>
+    <color name="colorBackgroundBlack">#0D0E12</color>
+    <color name="colorErrorBlack">#EF4444</color>
+    <color name="colorOnErrorBlack">#FFFFFF</color>
+    <color name="colorErrorContainerBlack">#2E1515</color>
+    <color name="colorOnErrorContainerBlack">#FCA5A5</color>
+    <color name="colorOutlineBlack">#2D2E37</color>
+    <color name="colorOutlineVariantBlack">#23242C</color>
 
-    <!-- Default Theme Colors (Dark Mode) - Black and White -->
+    <!-- Default Theme Colors (Dark Mode) - Modern Obsidian with Gradient Tiles -->
     <color name="colorPrimary">#FFFFFF</color>
-    <color name="colorOnPrimary">#000000</color>
-    <color name="colorPrimaryContainer">#000000</color>
+    <color name="colorOnPrimary">#111115</color>
+    <color name="colorPrimaryContainer">#22232A</color>
     <color name="colorOnPrimaryContainer">#FFFFFF</color>
-    <color name="colorSecondary">#CCCCCC</color>
-    <color name="colorOnSecondary">#000000</color>
-    <color name="colorSecondaryContainer">#111111</color>
+    <color name="colorSecondary">#B0B2BD</color>
+    <color name="colorOnSecondary">#111115</color>
+    <color name="colorSecondaryContainer">#1F2026</color>
     <color name="colorOnSecondaryContainer">#FFFFFF</color>
-    <color name="colorSurface">#000000</color>
+    <color name="colorSurface">#18191E</color>
     <color name="colorOnSurface">#FFFFFF</color>
-    <color name="colorSurfaceVariant">#000000</color>
-    <color name="colorOnSurfaceVariant">#CCCCCC</color>
-    <color name="colorBackground">#000000</color>
-    <color name="colorError">#FFFFFF</color>
-    <color name="colorOnError">#000000</color>
-    <color name="colorErrorContainer">#111111</color>
-    <color name="colorOnErrorContainer">#FFFFFF</color>
-    <color name="colorOutline">#FFFFFF</color>
-    <color name="colorOutlineVariant">#333333</color>
+    <color name="colorSurfaceVariant">#22232A</color>
+    <color name="colorOnSurfaceVariant">#9496A1</color>
+    <color name="colorBackground">#0D0E12</color>
+    <color name="colorError">#EF4444</color>
+    <color name="colorOnError">#FFFFFF</color>
+    <color name="colorErrorContainer">#2E1515</color>
+    <color name="colorOnErrorContainer">#FCA5A5</color>
+    <color name="colorOutline">#2D2E37</color>
+    <color name="colorOutlineVariant">#23242C</color>
+    <color name="nav_active_indicator">#2EFFFFFF</color>
 
     <!-- Additional Colors for Better Readability -->
     <color name="attendance_attended">#10B981</color>

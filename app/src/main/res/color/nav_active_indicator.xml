@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- 12% black = subtle visible selection pill without going full black -->
-    <item android:color="#1E111111" />
-</selector>

@@ -48,8 +48,6 @@
         android:visibility="gone"
         tools:text="Retry" />
 
-</LinearLayout>
-
     <Button
         android:id="@+id/button"
         style="@style/Widget.Material3.Button.OutlinedButton"
@@ -63,4 +61,5 @@
         android:textAllCaps="true"
         android:textSize="16sp"
         android:visibility="gone" />
+
 </LinearLayout>

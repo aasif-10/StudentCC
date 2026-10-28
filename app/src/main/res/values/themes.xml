@@ -249,15 +249,23 @@
         <item name="chipStyle">@style/Widget.VTOP.Chip</item>
     </style>
 
-    <!-- Active indicator for bottom nav: subtle rounded pill, not full black -->
+    <!-- Active indicator for bottom nav: subtle rounded pill -->
     <style name="Widget.App.NavActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">@color/nav_active_indicator</item>
+        <item name="android:width">54dp</item>
+        <item name="android:height">32dp</item>
         <item name="shapeAppearance">@style/ShapeAppearance.App.NavIndicator</item>
     </style>
 
     <style name="ShapeAppearance.App.NavIndicator" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="TextAppearance.App.BottomNav" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/outfit</item>
     </style>
 
     <style name="Theme.VTOP_Red" parent="Base.Theme.VTOP_Red">

@@ -106,25 +106,26 @@
     <color name="colorOutlineVariantBlack">#E0E0E0</color>
 
     <!-- Default Theme Colors (Light Mode) - Modern Black & White -->
-    <color name="colorPrimary">#111111</color>
+    <color name="colorPrimary">#111215</color>
     <color name="colorOnPrimary">#FFFFFF</color>
-    <color name="colorPrimaryContainer">#F3F3F3</color>
-    <color name="colorOnPrimaryContainer">#111111</color>
-    <color name="colorSecondary">#444444</color>
+    <color name="colorPrimaryContainer">#ECEEF2</color>
+    <color name="colorOnPrimaryContainer">#111215</color>
+    <color name="colorSecondary">#444752</color>
     <color name="colorOnSecondary">#FFFFFF</color>
-    <color name="colorSecondaryContainer">#EFEFEF</color>
-    <color name="colorOnSecondaryContainer">#111111</color>
+    <color name="colorSecondaryContainer">#EAECEF</color>
+    <color name="colorOnSecondaryContainer">#111215</color>
     <color name="colorSurface">#FFFFFF</color>
-    <color name="colorOnSurface">#111111</color>
-    <color name="colorSurfaceVariant">#F5F5F7</color>
-    <color name="colorOnSurfaceVariant">#555555</color>
-    <color name="colorBackground">#F5F5F7</color>
+    <color name="colorOnSurface">#111215</color>
+    <color name="colorSurfaceVariant">#ECEEF2</color>
+    <color name="colorOnSurfaceVariant">#6E717C</color>
+    <color name="colorBackground">#F4F5F8</color>
     <color name="colorError">#D32F2F</color>
     <color name="colorOnError">#FFFFFF</color>
     <color name="colorErrorContainer">#FFEBEE</color>
     <color name="colorOnErrorContainer">#B71C1C</color>
-    <color name="colorOutline">#E0E0E0</color>
-    <color name="colorOutlineVariant">#EFEFEF</color>
+    <color name="colorOutline">#E2E4E9</color>
+    <color name="colorOutlineVariant">#EDEFF3</color>
+    <color name="nav_active_indicator">#20000000</color>
 
     <!-- Additional Colors for Better Readability -->
     <color name="attendance_attended">#10B981</color>

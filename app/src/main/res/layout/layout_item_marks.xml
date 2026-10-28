@@ -3,28 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="16dp"
-    android:layout_marginVertical="8dp"
-    app:cardBackgroundColor="?attr/colorSurface"
-    app:cardCornerRadius="16dp"
+    android:layout_marginHorizontal="0dp"
+    android:layout_marginTop="0dp"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="14dp"
     app:cardElevation="0dp"
     app:strokeColor="?attr/colorOutline"
-    app:strokeWidth="1dp">
+    app:strokeWidth="1dp"
+    app:cardBackgroundColor="@android:color/transparent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:background="@drawable/bg_tile_gradient"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp">
 
         <TextView
             android:id="@+id/text_view_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="12dp"
             android:ellipsize="end"
             android:maxLines="2"
             android:textColor="?attr/colorOnSurface"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/relative_layout_score"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,11 +37,11 @@
             android:id="@+id/text_view_average"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="2dp"
             android:ellipsize="end"
             android:maxLines="1"
             android:textColor="?attr/colorOnSurfaceVariant"
-            android:textSize="14sp"
+            android:textSize="13sp"
             android:visibility="gone"
             app:layout_constraintEnd_toStartOf="@+id/relative_layout_score"
             app:layout_constraintStart_toStartOf="parent"
@@ -48,11 +51,11 @@
             android:id="@+id/text_view_status"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="2dp"
             android:ellipsize="end"
             android:maxLines="1"
             android:textColor="?attr/colorOnSurfaceVariant"
-            android:textSize="14sp"
+            android:textSize="13sp"
             android:visibility="gone"
             app:layout_constraintEnd_toStartOf="@+id/relative_layout_score"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,9 +66,10 @@
             style="@style/Widget.Material3.Chip.Assist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="6dp"
             android:clickable="false"
             android:focusable="false"
+            app:chipMinHeight="26dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_view_status" />
 
@@ -80,8 +84,8 @@
             <ProgressBar
                 android:id="@+id/progress_bar_score"
                 style="@style/Widget.VTOP.CircularProgressBar"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:max="100"
                 android:progress="0" />
 
@@ -91,7 +95,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:textColor="?attr/colorOnSurface"
-                android:textSize="14sp"
+                android:textSize="13sp"
                 android:textStyle="bold" />
         </RelativeLayout>
 
@@ -99,10 +103,10 @@
             android:id="@+id/text_view_mark_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="2dp"
             android:text="@string/score"
             android:textColor="?attr/colorOnSurfaceVariant"
-            android:textSize="12sp"
+            android:textSize="11sp"
             app:layout_constraintEnd_toEndOf="@+id/relative_layout_score"
             app:layout_constraintStart_toStartOf="@+id/relative_layout_score"
             app:layout_constraintTop_toBottomOf="@+id/relative_layout_score" />
