@@ -13,18 +13,21 @@
         android:background="@android:color/transparent"
         app:elevation="0dp">
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:titleEnabled="false">
+            android:orientation="vertical"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <LinearLayout
                 android:id="@+id/linear_layout_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="24dp">
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:paddingTop="24dp"
+                android:paddingBottom="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -63,16 +66,40 @@
 
             </LinearLayout>
 
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
+            <!-- Course Slider TabLayout (pill style like home day tabs) -->
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout_courses"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"
+                android:padding="3dp"
+                android:background="@drawable/bg_days_segmented_bar"
+                app:tabBackground="@null"
+                app:tabIndicator="@drawable/bg_day_tab_indicator"
+                app:tabIndicatorColor="?attr/colorPrimary"
+                app:tabIndicatorFullWidth="true"
+                app:tabIndicatorGravity="center"
+                app:tabIndicatorHeight="36dp"
+                app:tabIndicatorAnimationMode="elastic"
+                app:tabMode="scrollable"
+                app:tabGravity="fill"
+                app:tabPaddingStart="8dp"
+                app:tabPaddingEnd="8dp"
+                app:tabRippleColor="@android:color/transparent"
+                app:tabSelectedTextColor="?attr/colorOnPrimary"
+                app:tabTextColor="?attr/colorOnSurfaceVariant"
+                app:tabTextAppearance="@style/TextAppearance.VTOP.DayTab" />
+
+        </LinearLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_marks"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager_marks"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:paddingBottom="80dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

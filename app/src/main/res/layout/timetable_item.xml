@@ -7,7 +7,7 @@
     android:layout_marginBottom="8dp"
     android:foregroundGravity="center"
     app:cardCornerRadius="16dp"
-    app:cardElevation="6dp"
+    app:cardElevation="0dp"
     app:strokeColor="?attr/colorOutline"
     app:strokeWidth="1dp">
 
@@ -27,8 +27,7 @@
             android:gravity="center"
             android:orientation="vertical"
             android:padding="8dp"
-            android:clipToOutline="true"
-            android:elevation="2dp">
+            android:clipToOutline="true">
 
             <TextView
                 android:id="@+id/text_start_time"

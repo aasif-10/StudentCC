@@ -6,22 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
 
-    <!-- This is where the fragments will be displayed -->
+    <!-- Fragment container -->
     <FrameLayout
         android:id="@+id/frame_layout_fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <!-- Pill-shape bottom navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="?attr/colorSurfaceVariant"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_pill_nav"
+        android:elevation="0dp"
+        app:elevation="0dp"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_navigation"
         app:itemIconTint="@color/selector_navigation_icon"
         app:itemTextColor="@color/selector_navigation_text"
         app:itemActiveIndicatorStyle="@style/Widget.Material3.BottomNavigationView.ActiveIndicator"
-        app:indicatorColor="?attr/colorSecondaryContainer" />
+        app:indicatorColor="?attr/colorPrimary" />
+
 </RelativeLayout>

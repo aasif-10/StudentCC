@@ -11,29 +11,29 @@
     <style name="Base.Theme.VTOP" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
 
-        <!-- Light Mode Color Palette - Modern & Vibrant -->
-        <item name="colorPrimary">#2196F3</item> <!-- Vibrant Blue -->
+        <!-- Black &amp; White Color Palette -->
+        <item name="colorPrimary">#000000</item>
         <item name="colorOnPrimary">#FFFFFF</item>
-        <item name="colorPrimaryContainer">#BBDEFB</item>
-        <item name="colorOnPrimaryContainer">#0D47A1</item>
+        <item name="colorPrimaryContainer">#F5F5F5</item>
+        <item name="colorOnPrimaryContainer">#000000</item>
 
-        <item name="colorSecondary">#00BCD4</item> <!-- Cyan Accent -->
+        <item name="colorSecondary">#444444</item>
         <item name="colorOnSecondary">#FFFFFF</item>
-        <item name="colorSecondaryContainer">#B2EBF2</item>
-        <item name="colorOnSecondaryContainer">#006064</item>
+        <item name="colorSecondaryContainer">#F0F0F0</item>
+        <item name="colorOnSecondaryContainer">#111111</item>
 
-        <item name="colorSurface">#F5F7FA</item> <!-- Off-white background -->
-        <item name="colorOnSurface">#1A1C1E</item>
-        <item name="colorSurfaceVariant">#FFFFFF</item> <!-- Card background -->
-        <item name="colorOnSurfaceVariant">#424242</item>
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="colorOnSurface">#000000</item>
+        <item name="colorSurfaceVariant">#F5F5F5</item>
+        <item name="colorOnSurfaceVariant">#555555</item>
 
-        <item name="colorError">#B00020</item>
+        <item name="colorError">#CC0000</item>
         <item name="colorOnError">#FFFFFF</item>
-        <item name="colorErrorContainer">#FCD8DF</item>
-        <item name="colorOnErrorContainer">#410002</item>
+        <item name="colorErrorContainer">#FFEEEE</item>
+        <item name="colorOnErrorContainer">#660000</item>
 
-        <item name="colorOutline">#E0E0E0</item>
-        <item name="colorOutlineVariant">#EEEEEE</item>
+        <item name="colorOutline">#CCCCCC</item>
+        <item name="colorOutlineVariant">#E8E8E8</item>
 
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">true</item>
@@ -43,17 +43,17 @@
         <item name="android:enforceNavigationBarContrast" tools:targetApi="q">false</item>
         <item name="android:fontFamily">@font/outfit</item>
 
-        <!-- Enhanced Attendance Colors -->
-        <item name="attendance_percentage_text_color">#1A1C1E</item>
-        <item name="attendance_subtext_color">#757575</item>
-        <item name="attendance_day_text_color">#424242</item>
+        <!-- Attendance Colors -->
+        <item name="attendance_percentage_text_color">#000000</item>
+        <item name="attendance_subtext_color">#555555</item>
+        <item name="attendance_day_text_color">#333333</item>
         <item name="attendance_percentage_text_high_color">#FFFFFF</item>
         <item name="attendance_percentage_text_medium_color">#FFFFFF</item>
         <item name="attendance_percentage_text_low_color">#FFFFFF</item>
 
         <!-- Calendar Day Text Colors -->
-        <item name="calendar_day_text_color">#424242</item>
-        <item name="calendar_subtext_color">#757575</item>
+        <item name="calendar_day_text_color">#333333</item>
+        <item name="calendar_subtext_color">#555555</item>
     </style>
 
     <!-- Red Theme -->

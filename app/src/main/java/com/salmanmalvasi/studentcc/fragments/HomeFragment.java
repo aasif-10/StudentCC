@@ -22,7 +22,6 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.card.MaterialCardView;
-import com.google.android.material.chip.Chip;
 import com.google.android.material.color.MaterialColors;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
@@ -233,8 +232,6 @@ public class HomeFragment extends Fragment {
         TextView lastUpdatedTextView = homeFragment.findViewById(R.id.text_view_last_updated);
         updateLastUpdatedIndicator(lastUpdatedTextView);
 
-        MaterialCardView calendarCard = homeFragment.findViewById(R.id.calendar_card);
-
         attendedClasses = sharedPreferences.getInt("attendedClasses", 0);
         totalClasses = sharedPreferences.getInt("totalClasses", 0);
         overallAttendance = (totalClasses > 0) ? ((attendedClasses * 100f) / totalClasses) : 0f;
@@ -324,21 +321,6 @@ public class HomeFragment extends Fragment {
                     android.util.Log.e("HomeFragment", "Error calculating OD completed", throwable);
                 });
 
-        // Calendar Card Setup
-        // Removed dynamic upcoming event loading to force "View schedule" text
-        // loadUpcomingEvents(upcomingEventsText);
-
-        if (calendarCard != null) {
-            calendarCard.setOnClickListener(v -> {
-                // Open CalendarFragment in a dialog or new activity
-                CalendarFragment calendarFragment = new CalendarFragment();
-                getParentFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.frame_layout_fragment_container, calendarFragment)
-                        .addToBackStack(null)
-                        .commit();
-            });
-        }
 
         // Timetable Setup
         TabLayout days = homeFragment.findViewById(R.id.tab_layout_days);
@@ -535,7 +517,7 @@ public class HomeFragment extends Fragment {
             });
         }
 
-        // Quick Sync (Bolt/Flash Button) — syncs attendance, detailed attendance, marks
+        // Quick Sync (Bolt/Flash Button) - syncs attendance, detailed attendance, marks
         // via legacy VTOPService
         if (quickSyncButton != null) {
             quickSyncButton.setOnClickListener(view -> {
@@ -672,10 +654,7 @@ public class HomeFragment extends Fragment {
 
     private void setupStatsCarousel(View homeFragment, SharedPreferences sharedPreferences) {
         RecyclerView statsCarousel = homeFragment.findViewById(R.id.recycler_stats_carousel);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL,
-                false);
-        statsCarousel.setLayoutManager(layoutManager);
-        new PagerSnapHelper().attachToRecyclerView(statsCarousel);
+        statsCarousel.setLayoutManager(new androidx.recyclerview.widget.GridLayoutManager(requireContext(), 2));
 
         List<StatsItem> stats = new ArrayList<>();
         stats.add(new StatsItem(R.drawable.ic_theory,
@@ -722,66 +701,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void setupQuickActions(View homeFragment) {
-        Chip skipAdvisor = homeFragment.findViewById(R.id.chip_skip_advisor);
-        Chip attendanceCalc = homeFragment.findViewById(R.id.chip_attendance_calc);
-        Chip faculty = homeFragment.findViewById(R.id.chip_faculty);
-        Chip placementTracker = homeFragment.findViewById(R.id.chip_placement_tracker);
-        Chip calendar = homeFragment.findViewById(R.id.chip_calendar);
-
-        if (skipAdvisor != null)
-            skipAdvisor.setOnClickListener(v -> openFeatureFragment(new SkipAdvisorFragment()));
-        if (attendanceCalc != null)
-            attendanceCalc.setOnClickListener(v -> openFeatureFragment(new AttendanceCalculatorFragment()));
-        if (faculty != null)
-            faculty.setOnClickListener(v -> openFeatureFragment(new FacultyDetailsFragment()));
-        if (placementTracker != null) {
-            placementTracker.setOnClickListener(v -> openFeatureFragment(new PlacementTrackerFragment()));
-        }
-        Chip addWidget = homeFragment.findViewById(R.id.chip_add_widget);
-        if (addWidget != null) {
-            addWidget.setOnClickListener(v -> com.salmanmalvasi.studentcc.helpers.WidgetHelper.showWidgetPickerDialog(requireContext()));
-        }
-
-        calendar.setOnClickListener(v -> {
-            getParentFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.frame_layout_fragment_container, new CalendarFragment())
-                    .addToBackStack(null)
-                    .commit();
-        });
-
-        // Widget Prompt Card
-        View cardWidgetPrompt = homeFragment.findViewById(R.id.card_widget_prompt);
-        if (cardWidgetPrompt != null) {
-            SharedPreferences sp = SettingsRepository.getSharedPreferences(requireContext());
-            boolean dismissed = sp.getBoolean("widget_prompt_dismissed", false);
-            boolean alreadyInstalled = com.salmanmalvasi.studentcc.helpers.WidgetHelper.hasAnyWidgetInstalled(requireContext());
-
-            if (!dismissed && !alreadyInstalled) {
-                cardWidgetPrompt.setVisibility(View.VISIBLE);
-
-                View btnAdd = homeFragment.findViewById(R.id.btn_prompt_add_widget);
-                if (btnAdd != null) {
-                    btnAdd.setOnClickListener(v -> {
-                        com.salmanmalvasi.studentcc.helpers.WidgetHelper.showWidgetPickerDialog(requireContext());
-                        cardWidgetPrompt.setVisibility(View.GONE);
-                        sp.edit().putBoolean("widget_prompt_dismissed", true).apply();
-                    });
-                }
-
-                View btnDismiss = homeFragment.findViewById(R.id.btn_dismiss_widget_prompt);
-                if (btnDismiss != null) {
-                    btnDismiss.setOnClickListener(v -> {
-                        cardWidgetPrompt.animate().alpha(0f).setDuration(250).withEndAction(() -> {
-                            cardWidgetPrompt.setVisibility(View.GONE);
-                        });
-                        sp.edit().putBoolean("widget_prompt_dismissed", true).apply();
-                    });
-                }
-            } else {
-                cardWidgetPrompt.setVisibility(View.GONE);
-            }
-        }
+        // Quick actions removed as per requirement
     }
 
     private void openFeatureFragment(Fragment fragment) {

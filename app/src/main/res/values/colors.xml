@@ -87,44 +87,44 @@
     <!-- Black Theme Colors (Light Mode) -->
     <color name="colorPrimaryBlack">#000000</color>
     <color name="colorOnPrimaryBlack">#FFFFFF</color>
-    <color name="colorPrimaryContainerBlack">#F5F5F5</color>
+    <color name="colorPrimaryContainerBlack">#FFFFFF</color>
     <color name="colorOnPrimaryContainerBlack">#000000</color>
-    <color name="colorSecondaryBlack">#64748B</color>
+    <color name="colorSecondaryBlack">#222222</color>
     <color name="colorOnSecondaryBlack">#FFFFFF</color>
     <color name="colorSecondaryContainerBlack">#F5F5F5</color>
-    <color name="colorOnSecondaryContainerBlack">#64748B</color>
+    <color name="colorOnSecondaryContainerBlack">#000000</color>
     <color name="colorSurfaceBlack">#FFFFFF</color>
-    <color name="colorOnSurfaceBlack">#0F172A</color>
-    <color name="colorSurfaceVariantBlack">#F5F5F5</color>
-    <color name="colorOnSurfaceVariantBlack">#64748B</color>
-    <color name="colorBackgroundBlack">#FAFAFA</color>
-    <color name="colorErrorBlack">#EF4444</color>
+    <color name="colorOnSurfaceBlack">#000000</color>
+    <color name="colorSurfaceVariantBlack">#FFFFFF</color>
+    <color name="colorOnSurfaceVariantBlack">#333333</color>
+    <color name="colorBackgroundBlack">#FFFFFF</color>
+    <color name="colorErrorBlack">#000000</color>
     <color name="colorOnErrorBlack">#FFFFFF</color>
     <color name="colorErrorContainerBlack">#F5F5F5</color>
-    <color name="colorOnErrorContainerBlack">#B91C1C</color>
-    <color name="colorOutlineBlack">#E0E0E0</color>
-    <color name="colorOutlineVariantBlack">#F5F5F5</color>
+    <color name="colorOnErrorContainerBlack">#000000</color>
+    <color name="colorOutlineBlack">#000000</color>
+    <color name="colorOutlineVariantBlack">#E0E0E0</color>
 
     <!-- Default Theme Colors (Light Mode) - Black and White -->
     <color name="colorPrimary">#000000</color>
     <color name="colorOnPrimary">#FFFFFF</color>
-    <color name="colorPrimaryContainer">#F5F5F5</color>
+    <color name="colorPrimaryContainer">#FFFFFF</color>
     <color name="colorOnPrimaryContainer">#000000</color>
-    <color name="colorSecondary">#64748B</color>
+    <color name="colorSecondary">#222222</color>
     <color name="colorOnSecondary">#FFFFFF</color>
     <color name="colorSecondaryContainer">#F5F5F5</color>
-    <color name="colorOnSecondaryContainer">#64748B</color>
+    <color name="colorOnSecondaryContainer">#000000</color>
     <color name="colorSurface">#FFFFFF</color>
-    <color name="colorOnSurface">#0F172A</color>
-    <color name="colorSurfaceVariant">#F5F5F5</color>
-    <color name="colorOnSurfaceVariant">#64748B</color>
-    <color name="colorBackground">#FAFAFA</color>
-    <color name="colorError">#EF4444</color>
+    <color name="colorOnSurface">#000000</color>
+    <color name="colorSurfaceVariant">#FFFFFF</color>
+    <color name="colorOnSurfaceVariant">#333333</color>
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorError">#000000</color>
     <color name="colorOnError">#FFFFFF</color>
     <color name="colorErrorContainer">#F5F5F5</color>
-    <color name="colorOnErrorContainer">#B91C1C</color>
-    <color name="colorOutline">#E0E0E0</color>
-    <color name="colorOutlineVariant">#F5F5F5</color>
+    <color name="colorOnErrorContainer">#000000</color>
+    <color name="colorOutline">#000000</color>
+    <color name="colorOutlineVariant">#E0E0E0</color>
 
     <!-- Additional Colors for Better Readability -->
     <color name="attendance_attended">#10B981</color>
