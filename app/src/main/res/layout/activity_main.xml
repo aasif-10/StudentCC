@@ -21,13 +21,13 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
         android:background="@drawable/bg_pill_nav"
-        android:elevation="0dp"
+        android:elevation="8dp"
         app:elevation="0dp"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_navigation"
         app:itemIconTint="@color/selector_navigation_icon"
         app:itemTextColor="@color/selector_navigation_text"
-        app:itemActiveIndicatorStyle="@style/Widget.Material3.BottomNavigationView.ActiveIndicator"
-        app:indicatorColor="?attr/colorPrimary" />
+        app:itemActiveIndicatorStyle="@style/Widget.App.NavActiveIndicator"
+        app:indicatorColor="@color/nav_active_indicator" />
 
 </RelativeLayout>

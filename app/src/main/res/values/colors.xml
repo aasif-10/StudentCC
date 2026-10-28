@@ -105,26 +105,26 @@
     <color name="colorOutlineBlack">#000000</color>
     <color name="colorOutlineVariantBlack">#E0E0E0</color>
 
-    <!-- Default Theme Colors (Light Mode) - Black and White -->
-    <color name="colorPrimary">#000000</color>
+    <!-- Default Theme Colors (Light Mode) - Modern Black & White -->
+    <color name="colorPrimary">#111111</color>
     <color name="colorOnPrimary">#FFFFFF</color>
-    <color name="colorPrimaryContainer">#FFFFFF</color>
-    <color name="colorOnPrimaryContainer">#000000</color>
-    <color name="colorSecondary">#222222</color>
+    <color name="colorPrimaryContainer">#F3F3F3</color>
+    <color name="colorOnPrimaryContainer">#111111</color>
+    <color name="colorSecondary">#444444</color>
     <color name="colorOnSecondary">#FFFFFF</color>
-    <color name="colorSecondaryContainer">#F5F5F5</color>
-    <color name="colorOnSecondaryContainer">#000000</color>
+    <color name="colorSecondaryContainer">#EFEFEF</color>
+    <color name="colorOnSecondaryContainer">#111111</color>
     <color name="colorSurface">#FFFFFF</color>
-    <color name="colorOnSurface">#000000</color>
-    <color name="colorSurfaceVariant">#FFFFFF</color>
-    <color name="colorOnSurfaceVariant">#333333</color>
-    <color name="colorBackground">#FFFFFF</color>
-    <color name="colorError">#000000</color>
+    <color name="colorOnSurface">#111111</color>
+    <color name="colorSurfaceVariant">#F5F5F7</color>
+    <color name="colorOnSurfaceVariant">#555555</color>
+    <color name="colorBackground">#F5F5F7</color>
+    <color name="colorError">#D32F2F</color>
     <color name="colorOnError">#FFFFFF</color>
-    <color name="colorErrorContainer">#F5F5F5</color>
-    <color name="colorOnErrorContainer">#000000</color>
-    <color name="colorOutline">#000000</color>
-    <color name="colorOutlineVariant">#E0E0E0</color>
+    <color name="colorErrorContainer">#FFEBEE</color>
+    <color name="colorOnErrorContainer">#B71C1C</color>
+    <color name="colorOutline">#E0E0E0</color>
+    <color name="colorOutlineVariant">#EFEFEF</color>
 
     <!-- Additional Colors for Better Readability -->
     <color name="attendance_attended">#10B981</color>

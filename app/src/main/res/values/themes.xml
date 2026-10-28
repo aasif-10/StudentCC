@@ -11,29 +11,31 @@
     <style name="Base.Theme.VTOP" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
 
-        <!-- Black &amp; White Color Palette -->
-        <item name="colorPrimary">#000000</item>
+        <!-- Modern Black & White Color Palette -->
+        <item name="colorPrimary">#111111</item>
         <item name="colorOnPrimary">#FFFFFF</item>
-        <item name="colorPrimaryContainer">#F5F5F5</item>
-        <item name="colorOnPrimaryContainer">#000000</item>
+        <item name="colorPrimaryContainer">#F3F3F3</item>
+        <item name="colorOnPrimaryContainer">#111111</item>
 
         <item name="colorSecondary">#444444</item>
         <item name="colorOnSecondary">#FFFFFF</item>
-        <item name="colorSecondaryContainer">#F0F0F0</item>
+        <item name="colorSecondaryContainer">#EFEFEF</item>
         <item name="colorOnSecondaryContainer">#111111</item>
 
+        <!-- Slightly off-white surface so cards stand out -->
         <item name="colorSurface">#FFFFFF</item>
-        <item name="colorOnSurface">#000000</item>
-        <item name="colorSurfaceVariant">#F5F5F5</item>
+        <item name="colorOnSurface">#111111</item>
+        <item name="colorSurfaceVariant">#F5F5F7</item>
         <item name="colorOnSurfaceVariant">#555555</item>
 
-        <item name="colorError">#CC0000</item>
+        <item name="colorError">#D32F2F</item>
         <item name="colorOnError">#FFFFFF</item>
-        <item name="colorErrorContainer">#FFEEEE</item>
-        <item name="colorOnErrorContainer">#660000</item>
+        <item name="colorErrorContainer">#FFEBEE</item>
+        <item name="colorOnErrorContainer">#B71C1C</item>
 
-        <item name="colorOutline">#CCCCCC</item>
-        <item name="colorOutlineVariant">#E8E8E8</item>
+        <!-- Soft outline, not harsh black -->
+        <item name="colorOutline">#E0E0E0</item>
+        <item name="colorOutlineVariant">#EFEFEF</item>
 
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">true</item>
@@ -44,7 +46,7 @@
         <item name="android:fontFamily">@font/outfit</item>
 
         <!-- Attendance Colors -->
-        <item name="attendance_percentage_text_color">#000000</item>
+        <item name="attendance_percentage_text_color">#111111</item>
         <item name="attendance_subtext_color">#555555</item>
         <item name="attendance_day_text_color">#333333</item>
         <item name="attendance_percentage_text_high_color">#FFFFFF</item>
@@ -243,8 +245,19 @@
 
     <!-- Main Themes -->
     <style name="Theme.VTOP" parent="Base.Theme.VTOP">
-        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="android:windowBackground">#F5F5F7</item>
         <item name="chipStyle">@style/Widget.VTOP.Chip</item>
+    </style>
+
+    <!-- Active indicator for bottom nav: subtle rounded pill, not full black -->
+    <style name="Widget.App.NavActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/nav_active_indicator</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.NavIndicator</item>
+    </style>
+
+    <style name="ShapeAppearance.App.NavIndicator" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
     </style>
 
     <style name="Theme.VTOP_Red" parent="Base.Theme.VTOP_Red">
