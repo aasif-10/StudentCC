@@ -79,6 +79,16 @@ public class MainActivity extends AppCompatActivity {
     CompositeDisposable compositeDisposable = new CompositeDisposable();
     VTOPHelper vtopHelper;
     private boolean classTimeMonitorStarted = false;
+    private int currentTabIndex = 0;
+
+    private int getTabIndex(int itemId) {
+        if (itemId == R.id.item_home) return 0;
+        if (itemId == R.id.item_performance) return 1;
+        if (itemId == R.id.item_gpa_calculator) return 2;
+        if (itemId == R.id.item_hostel_info) return 3;
+        if (itemId == R.id.item_profile) return 4;
+        return 0;
+    }
 
     static final String HOME_FRAGMENT_TAG = "HOME_FRAGMENT_TAG";
     static final String PERFORMANCE_FRAGMENT_TAG = "PERFORMANCE_FRAGMENT_TAG";
@@ -563,7 +573,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-            getSupportFragmentManager().beginTransaction()
+            int newIndex = getTabIndex(item.getItemId());
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            if (newIndex > currentTabIndex) {
+                transaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left);
+            } else if (newIndex < currentTabIndex) {
+                transaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right);
+            }
+            currentTabIndex = newIndex;
+            transaction
                     .replace(R.id.frame_layout_fragment_container, selectedFragment, selectedFragmentTag)
                     .commit();
 
@@ -575,6 +593,7 @@ public class MainActivity extends AppCompatActivity {
             selectedItem = savedInstanceState.getInt("selectedItem");
         }
 
+        this.currentTabIndex = getTabIndex(selectedItem);
         this.bottomNavigationView.setSelectedItemId(selectedItem);
         handleIntentNavigation(this.getIntent());
         this.vtopHelper = new VTOPHelper(this, new VTOPHelper.Initiator() {

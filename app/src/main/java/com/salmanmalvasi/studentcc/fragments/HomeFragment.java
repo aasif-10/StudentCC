@@ -171,7 +171,7 @@ public class HomeFragment extends Fragment {
                     systemWindowInsetLeft,
                     0,
                     systemWindowInsetRight,
-                    (int) (bottomNavigationHeight + 20 * pixelDensity)));
+                    (int) (bottomNavigationHeight + 4 * pixelDensity)));
 
             // Only one listener can be added per requestKey, so we create a duplicate
             getParentFragmentManager().setFragmentResult("customInsets2", result);
@@ -223,7 +223,7 @@ public class HomeFragment extends Fragment {
 
         String name = sharedPreferences.getString("name", getString(R.string.name));
         TextView nameTextView = homeFragment.findViewById(R.id.text_view_name);
-        nameTextView.setText(name);
+        nameTextView.setText(toTitleCase(name));
 
         TextView dateTextView = homeFragment.findViewById(R.id.text_view_date);
         SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE, d MMMM", Locale.getDefault());
@@ -702,6 +702,24 @@ public class HomeFragment extends Fragment {
 
     private void setupQuickActions(View homeFragment) {
         // Quick actions removed as per requirement
+    }
+
+    private String toTitleCase(String text) {
+        if (text == null || text.trim().isEmpty()) {
+            return "";
+        }
+        String[] words = text.trim().split("\\s+");
+        StringBuilder sb = new StringBuilder();
+        for (String word : words) {
+            if (!word.isEmpty()) {
+                sb.append(Character.toUpperCase(word.charAt(0)));
+                if (word.length() > 1) {
+                    sb.append(word.substring(1).toLowerCase(Locale.getDefault()));
+                }
+                sb.append(" ");
+            }
+        }
+        return sb.toString().trim();
     }
 
     private void openFeatureFragment(Fragment fragment) {

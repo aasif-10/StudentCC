@@ -1,70 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scroll_course_performance_cards"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="6dp"
-    android:orientation="vertical">
+    android:layout_marginBottom="4dp"
+    android:clipToPadding="false"
+    android:overScrollMode="never"
+    android:scrollbars="none">
 
-    <!-- Row 1: Overall + Theory side by side -->
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
         <com.salmanmalvasi.studentcc.widgets.PerformanceCard
             android:id="@+id/performance_card_overall"
-            android:layout_width="0dp"
+            android:layout_width="145dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginEnd="5dp"
+            android:layout_marginEnd="8dp"
             app:title="@string/overall_course_score" />
 
         <com.salmanmalvasi.studentcc.widgets.PerformanceCard
             android:id="@+id/performance_card_theory"
-            android:layout_width="0dp"
+            android:layout_width="145dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="5dp"
+            android:layout_marginEnd="8dp"
             app:title="@string/theory_weightage" />
+
+        <com.salmanmalvasi.studentcc.widgets.PerformanceCard
+            android:id="@+id/performance_card_average"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:title="Average" />
+
+        <com.salmanmalvasi.studentcc.widgets.PerformanceCard
+            android:id="@+id/performance_card_lab"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:title="@string/lab_weightage" />
+
+        <com.salmanmalvasi.studentcc.widgets.PerformanceCard
+            android:id="@+id/performance_card_project"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            app:title="@string/project_weightage" />
 
     </LinearLayout>
 
-    <!-- Row 2: Average (relative) + Lab + Project in a compact scrollable row -->
-    <HorizontalScrollView
-        android:id="@+id/scroll_secondary_cards"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:scrollbars="none">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <com.salmanmalvasi.studentcc.widgets.PerformanceCard
-                android:id="@+id/performance_card_average"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                app:title="Average" />
-
-            <com.salmanmalvasi.studentcc.widgets.PerformanceCard
-                android:id="@+id/performance_card_lab"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                app:title="@string/lab_weightage" />
-
-            <com.salmanmalvasi.studentcc.widgets.PerformanceCard
-                android:id="@+id/performance_card_project"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                app:title="@string/project_weightage" />
-
-        </LinearLayout>
-
-    </HorizontalScrollView>
-
-</LinearLayout>
+</HorizontalScrollView>

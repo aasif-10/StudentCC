@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.widget.LinearLayout;
@@ -30,13 +31,17 @@ public class PerformanceCard extends LinearLayout {
 
     public PerformanceCard(Context context) {
         super(context);
-
         this.context = context;
+        this.title = new AppCompatTextView(context);
+        this.scoreText = new AppCompatTextView(context);
+        this.subtitleText = new AppCompatTextView(context);
+        this.scoreProgress = new ProgressBar(context, null, 0, R.style.Widget_VTOP_CircularProgressBar);
         this.initialize();
     }
 
     public PerformanceCard(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        this.context = context;
 
         this.title = new AppCompatTextView(context);
         this.scoreText = new AppCompatTextView(context);
@@ -55,7 +60,6 @@ public class PerformanceCard extends LinearLayout {
             a.recycle();
         }
 
-        this.context = context;
         this.initialize();
     }
 
@@ -63,49 +67,53 @@ public class PerformanceCard extends LinearLayout {
         float pixelDensity = this.context.getResources().getDisplayMetrics().density;
         this.defaultValues = new JSONObject();
 
-        TypedValue colorPrimary = new TypedValue();
-        getContext().getTheme().resolveAttribute(R.attr.colorPrimary, colorPrimary, true);
+        TypedValue colorOnSurface = new TypedValue();
+        getContext().getTheme().resolveAttribute(R.attr.colorOnSurface, colorOnSurface, true);
 
+        TypedValue colorOnSurfaceVariant = new TypedValue();
+        getContext().getTheme().resolveAttribute(R.attr.colorOnSurfaceVariant, colorOnSurfaceVariant, true);
+
+        this.setOrientation(VERTICAL);
+        this.setGravity(Gravity.CENTER);
+        this.setBackground(ContextCompat.getDrawable(this.context, R.drawable.bg_tile_gradient));
+        this.setPadding(
+                (int) (12 * pixelDensity),
+                (int) (14 * pixelDensity),
+                (int) (12 * pixelDensity),
+                (int) (14 * pixelDensity)
+        );
+
+        // Centered Title
         LayoutParams titleParams = new LayoutParams(
-                LayoutParams.WRAP_CONTENT,
+                LayoutParams.MATCH_PARENT,
                 LayoutParams.WRAP_CONTENT
         );
-        titleParams.setMargins(
-                0,
-                0,
-                0,
-                (int) (10 * pixelDensity)
-        );
+        titleParams.gravity = Gravity.CENTER_HORIZONTAL;
+        titleParams.setMargins(0, 0, 0, (int) (10 * pixelDensity));
         this.title.setLayoutParams(titleParams);
-        this.title.setTextColor(colorPrimary.data);
-        this.title.setTextSize(15);
-
+        this.title.setGravity(Gravity.CENTER);
+        this.title.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        this.title.setTextColor(colorOnSurface.data);
+        this.title.setTextSize(13);
+        this.title.setTypeface(this.title.getTypeface(), Typeface.BOLD);
+        this.title.setMaxLines(2);
+        this.title.setEllipsize(android.text.TextUtils.TruncateAt.END);
         this.addView(this.title);
 
-        /*
-            This empty view is used to fill blank space
-         */
-        View emptyView = new RelativeLayout(this.context);
-        LayoutParams outerContainerParams = new LayoutParams(
-                LayoutParams.WRAP_CONTENT,
-                0,
-                1
-        );
-        emptyView.setLayoutParams(outerContainerParams);
-
-        this.addView(emptyView);
-
+        // Circular Progress + Score Container
         RelativeLayout container = new RelativeLayout(this.context);
         LayoutParams containerParams = new LayoutParams(
                 LayoutParams.WRAP_CONTENT,
                 LayoutParams.WRAP_CONTENT
         );
+        containerParams.gravity = Gravity.CENTER_HORIZONTAL;
         container.setLayoutParams(containerParams);
 
         RelativeLayout.LayoutParams scoreProgressParams = new RelativeLayout.LayoutParams(
-                (int) (100 * pixelDensity),
-                (int) (100 * pixelDensity)
+                (int) (76 * pixelDensity),
+                (int) (76 * pixelDensity)
         );
+        scoreProgressParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
         this.scoreProgress.setIndeterminateDrawable(ContextCompat.getDrawable(this.getContext(), R.drawable.background_circular_progress_indeterminate));
         this.scoreProgress.setLayoutParams(scoreProgressParams);
 
@@ -115,34 +123,29 @@ public class PerformanceCard extends LinearLayout {
         );
         scoreTextParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
         this.scoreText.setLayoutParams(scoreTextParams);
-        this.scoreText.setTextColor(colorPrimary.data);
-        this.scoreText.setTextSize(17);
+        this.scoreText.setGravity(Gravity.CENTER);
+        this.scoreText.setTextColor(colorOnSurface.data);
+        this.scoreText.setTextSize(15);
         this.scoreText.setTypeface(this.scoreText.getTypeface(), Typeface.BOLD);
 
         container.addView(this.scoreProgress);
         container.addView(this.scoreText);
         this.addView(container);
 
-        // Add subtitle text below the circular progress
+        // Subtitle Text below circular progress
         LayoutParams subtitleParams = new LayoutParams(
-                LayoutParams.WRAP_CONTENT,
+                LayoutParams.MATCH_PARENT,
                 LayoutParams.WRAP_CONTENT
         );
-        subtitleParams.setMargins(0, (int) (10 * pixelDensity), 0, 0);
+        subtitleParams.gravity = Gravity.CENTER_HORIZONTAL;
+        subtitleParams.setMargins(0, (int) (8 * pixelDensity), 0, 0);
         this.subtitleText.setLayoutParams(subtitleParams);
-        this.subtitleText.setTextColor(colorPrimary.data);
-        this.subtitleText.setTextSize(12);
-        this.subtitleText.setVisibility(GONE); // Initially hidden
+        this.subtitleText.setGravity(Gravity.CENTER);
+        this.subtitleText.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        this.subtitleText.setTextColor(colorOnSurfaceVariant.data);
+        this.subtitleText.setTextSize(11);
+        this.subtitleText.setVisibility(GONE);
         this.addView(this.subtitleText);
-
-        this.setBackground(ContextCompat.getDrawable(this.context, R.drawable.background_card));
-        this.setOrientation(VERTICAL);
-        this.setPadding(
-                (int) (20 * pixelDensity),
-                (int) (20 * pixelDensity),
-                (int) (20 * pixelDensity),
-                (int) (20 * pixelDensity)
-        );
     }
 
     public void setTitle(String title) {
@@ -159,32 +162,20 @@ public class PerformanceCard extends LinearLayout {
     }
 
     public void hideScoreDisplay() {
-        // Hide the circular progress and score text, but keep subtitle visible
         this.scoreProgress.setVisibility(GONE);
         this.scoreText.setVisibility(GONE);
     }
 
     public void showScoreDisplay() {
-        // Show the circular progress and score text
         this.scoreProgress.setVisibility(VISIBLE);
         this.scoreText.setVisibility(VISIBLE);
     }
 
-    /**
-     * Display relative performance in a two-line format:
-     * Line 1: Large number (e.g., "-1.2")
-     * Line 2: "weightage from average"
-     */
     public void setRelativePerformance(String relativeValue) {
         if (relativeValue != null && !relativeValue.trim().isEmpty()) {
-            // Hide the circular progress and percentage
             this.hideScoreDisplay();
-
-            // Use the scoreText area to display the large number
             this.scoreText.setText(relativeValue);
             this.scoreText.setVisibility(VISIBLE);
-
-            // Use subtitle for the description
             this.subtitleText.setText("weightage from average");
             this.subtitleText.setVisibility(VISIBLE);
         } else {
@@ -211,7 +202,6 @@ public class PerformanceCard extends LinearLayout {
             this.subtitleText.setVisibility(GONE);
         } else {
             this.scoreText.setVisibility(VISIBLE);
-            // Don't automatically show subtitle, let setSubtitle control it
         }
     }
 
@@ -283,7 +273,6 @@ public class PerformanceCard extends LinearLayout {
                 card.startAnimation(alphaAnimation);
             } catch (Exception ignored) {
             }
-
         });
     }
 }

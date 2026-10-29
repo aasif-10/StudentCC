@@ -84,26 +84,26 @@
     <color name="colorOutlineGreen">#E2E8F0</color>
     <color name="colorOutlineVariantGreen">#F1F5F9</color>
 
-    <!-- Black Theme Colors (Light Mode) -->
-    <color name="colorPrimaryBlack">#000000</color>
-    <color name="colorOnPrimaryBlack">#FFFFFF</color>
-    <color name="colorPrimaryContainerBlack">#FFFFFF</color>
-    <color name="colorOnPrimaryContainerBlack">#000000</color>
-    <color name="colorSecondaryBlack">#222222</color>
-    <color name="colorOnSecondaryBlack">#FFFFFF</color>
-    <color name="colorSecondaryContainerBlack">#F5F5F5</color>
-    <color name="colorOnSecondaryContainerBlack">#000000</color>
-    <color name="colorSurfaceBlack">#FFFFFF</color>
-    <color name="colorOnSurfaceBlack">#000000</color>
-    <color name="colorSurfaceVariantBlack">#FFFFFF</color>
-    <color name="colorOnSurfaceVariantBlack">#333333</color>
-    <color name="colorBackgroundBlack">#FFFFFF</color>
-    <color name="colorErrorBlack">#000000</color>
+    <!-- Black Theme Colors (Matte Black & White) -->
+    <color name="colorPrimaryBlack">#FFFFFF</color>
+    <color name="colorOnPrimaryBlack">#09090B</color>
+    <color name="colorPrimaryContainerBlack">#18181C</color>
+    <color name="colorOnPrimaryContainerBlack">#FFFFFF</color>
+    <color name="colorSecondaryBlack">#A1A1AA</color>
+    <color name="colorOnSecondaryBlack">#09090B</color>
+    <color name="colorSecondaryContainerBlack">#18181C</color>
+    <color name="colorOnSecondaryContainerBlack">#FFFFFF</color>
+    <color name="colorSurfaceBlack">#121215</color>
+    <color name="colorOnSurfaceBlack">#FFFFFF</color>
+    <color name="colorSurfaceVariantBlack">#18181C</color>
+    <color name="colorOnSurfaceVariantBlack">#A1A1AA</color>
+    <color name="colorBackgroundBlack">#09090B</color>
+    <color name="colorErrorBlack">#EF4444</color>
     <color name="colorOnErrorBlack">#FFFFFF</color>
-    <color name="colorErrorContainerBlack">#F5F5F5</color>
-    <color name="colorOnErrorContainerBlack">#000000</color>
-    <color name="colorOutlineBlack">#000000</color>
-    <color name="colorOutlineVariantBlack">#E0E0E0</color>
+    <color name="colorErrorContainerBlack">#2E1515</color>
+    <color name="colorOnErrorContainerBlack">#FCA5A5</color>
+    <color name="colorOutlineBlack">#24242A</color>
+    <color name="colorOutlineVariantBlack">#1C1C22</color>
 
     <!-- Default Theme Colors (Light Mode) - Modern Black & White -->
     <color name="colorPrimary">#111215</color>
@@ -125,7 +125,18 @@
     <color name="colorOnErrorContainer">#B71C1C</color>
     <color name="colorOutline">#E2E4E9</color>
     <color name="colorOutlineVariant">#EDEFF3</color>
-    <color name="nav_active_indicator">#20000000</color>
+
+    <!-- Floating Nav Pill Colors -->
+    <color name="nav_active_indicator">#111215</color>
+    <color name="nav_icon_checked">#FFFFFF</color>
+    <color name="nav_icon_unchecked">#6E717C</color>
+    <color name="nav_text_checked">#111215</color>
+    <color name="nav_text_unchecked">#6E717C</color>
+
+    <!-- Circular Progress Ring Colors -->
+    <color name="primary_30">#E2E4E9</color>
+    <color name="primary_35">#D0D3DC</color>
+    <color name="primary_75">#111215</color>
 
     <!-- Additional Colors for Better Readability -->
     <color name="attendance_attended">#10B981</color>
@@ -152,34 +163,34 @@
     <!-- Calendar Day Text Colors - Optimized for Readability per Theme -->
 
     <!-- RED THEME - Calendar Day Text Colors -->
-    <color name="calendar_day_text_red_light">#B91C1C</color> <!-- Darker red for better readability on light -->
-    <color name="calendar_day_text_red_dark">#F87171</color>  <!-- Lighter red for better readability on dark -->
-    <color name="calendar_subtext_red_light">#DC2626</color>  <!-- Medium red for secondary text -->
-    <color name="calendar_subtext_red_dark">#EF4444</color>   <!-- Bright red for secondary text on dark -->
+    <color name="calendar_day_text_red_light">#B91C1C</color>
+    <color name="calendar_day_text_red_dark">#F87171</color>
+    <color name="calendar_subtext_red_light">#DC2626</color>
+    <color name="calendar_subtext_red_dark">#EF4444</color>
 
     <!-- BLUE THEME - Calendar Day Text Colors -->
-    <color name="calendar_day_text_blue_light">#1D4ED8</color> <!-- Darker blue for better readability on light -->
-    <color name="calendar_day_text_blue_dark">#60A5FA</color>  <!-- Lighter blue for better readability on dark -->
-    <color name="calendar_subtext_blue_light">#2563EB</color>  <!-- Medium blue for secondary text -->
-    <color name="calendar_subtext_blue_dark">#3B82F6</color>   <!-- Bright blue for secondary text on dark -->
+    <color name="calendar_day_text_blue_light">#1D4ED8</color>
+    <color name="calendar_day_text_blue_dark">#60A5FA</color>
+    <color name="calendar_subtext_blue_light">#2563EB</color>
+    <color name="calendar_subtext_blue_dark">#3B82F6</color>
 
     <!-- GREEN THEME - Calendar Day Text Colors -->
-    <color name="calendar_day_text_green_light">#059669</color> <!-- Darker green for better readability on light -->
-    <color name="calendar_day_text_green_dark">#34D399</color>  <!-- Lighter green for better readability on dark -->
-    <color name="calendar_subtext_green_light">#00D26A</color>  <!-- Medium green for secondary text -->
-    <color name="calendar_subtext_green_dark">#10B981</color>   <!-- Bright green for secondary text on dark -->
+    <color name="calendar_day_text_green_light">#059669</color>
+    <color name="calendar_day_text_green_dark">#34D399</color>
+    <color name="calendar_subtext_green_light">#00D26A</color>
+    <color name="calendar_subtext_green_dark">#10B981</color>
 
     <!-- PURPLE THEME - Calendar Day Text Colors -->
-    <color name="calendar_day_text_purple_light">#6D28D9</color> <!-- Darker purple for better readability on light -->
-    <color name="calendar_day_text_purple_dark">#A78BFA</color>  <!-- Lighter purple for better readability on dark -->
-    <color name="calendar_subtext_purple_light">#7C3AED</color>  <!-- Medium purple for secondary text -->
-    <color name="calendar_subtext_purple_dark">#8B5CF6</color>   <!-- Bright purple for secondary text on dark -->
+    <color name="calendar_day_text_purple_light">#6D28D9</color>
+    <color name="calendar_day_text_purple_dark">#A78BFA</color>
+    <color name="calendar_subtext_purple_light">#7C3AED</color>
+    <color name="calendar_subtext_purple_dark">#8B5CF6</color>
 
     <!-- BLACK THEME - Calendar Day Text Colors -->
-    <color name="calendar_day_text_black_light">#111827</color> <!-- Very dark gray for light mode -->
-    <color name="calendar_day_text_black_dark">#F9FAFB</color>  <!-- Very light gray for dark mode -->
-    <color name="calendar_subtext_black_light">#374151</color>  <!-- Medium gray for secondary text -->
-    <color name="calendar_subtext_black_dark">#D1D5DB</color>   <!-- Light gray for secondary text on dark -->
+    <color name="calendar_day_text_black_light">#111827</color>
+    <color name="calendar_day_text_black_dark">#F9FAFB</color>
+    <color name="calendar_subtext_black_light">#374151</color>
+    <color name="calendar_subtext_black_dark">#D1D5DB</color>
 
     <!-- Muted Colors for Better Contrast -->
     <color name="muted_red">#EF4444</color>
@@ -190,9 +201,9 @@
     <color name="muted_teal">#06B6D4</color>
 
     <!-- Progress Ring Colors -->
-    <color name="progress_ring_color">#0F172A</color> <!-- Light mode dark text -->
-    <color name="progress_ring_background">#F8FAFC</color> <!-- Light mode clean background -->
-    <color name="progress_text_color">#0F172A</color> <!-- Light mode dark text -->
+    <color name="progress_ring_color">#0F172A</color>
+    <color name="progress_ring_background">#F8FAFC</color>
+    <color name="progress_text_color">#0F172A</color>
 
     <!-- Attendance Colors for Light Mode -->
     <color name="attendance_card_background_dark">#F8FAFC</color>
@@ -219,16 +230,16 @@
     <!-- Calendar Event Colors -->
     <color name="holiday_bg">#FFEBEE</color>
     <color name="holiday_indicator">#B22222</color>
-    <color name="holiday_text">#8B0000</color> <!-- Dark red text for light background -->
+    <color name="holiday_text">#8B0000</color>
     <color name="instructional_bg">#E8F5E9</color>
     <color name="instructional_indicator">#4CAF50</color>
-    <color name="instructional_text">#1B5E20</color> <!-- Dark green text for light background -->
+    <color name="instructional_text">#1B5E20</color>
     <color name="event_bg">#E3F2FD</color>
     <color name="event_indicator">#2196F3</color>
-    <color name="event_text">#0D47A1</color> <!-- Dark blue text for light background -->
+    <color name="event_text">#0D47A1</color>
     <color name="calendar_selected_bg">#1D4ED8</color>
     <color name="calendar_selected_day_text">#FFFFFF</color>
-    <color name="calendar_day_default_text">#424242</color> <!-- Default gray for day numbers in light theme -->
+    <color name="calendar_day_default_text">#424242</color>
 
     <!-- New Colors Added -->
     <color name="attendance_od_color">#FF9800</color>

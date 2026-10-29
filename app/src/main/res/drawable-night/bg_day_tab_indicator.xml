@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle">
-    <corners android:radius="18dp" />
-    <solid android:color="#FFFFFF" />
-</shape>
-
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:insetTop="1dp"
+    android:insetBottom="1dp"
+    android:insetLeft="2dp"
+    android:insetRight="2dp">
+    <shape android:shape="rectangle">
+        <corners android:radius="16dp" />
+        <solid android:color="#FFFFFF" />
+    </shape>
+</inset>

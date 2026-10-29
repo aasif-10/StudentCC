@@ -84,48 +84,59 @@
     <color name="colorOutlineGreen">#334155</color>
     <color name="colorOutlineVariantGreen">#1E293B</color>
 
-    <!-- Black/Neutral Theme Colors (Dark Mode) - Modern Obsidian with Gradient Tiles -->
+    <!-- Black/Neutral Theme Colors (Dark Mode) - Matte Black & White (Refined Obsidian) -->
     <color name="colorPrimaryBlack">#FFFFFF</color>
-    <color name="colorOnPrimaryBlack">#111115</color>
-    <color name="colorPrimaryContainerBlack">#22232A</color>
+    <color name="colorOnPrimaryBlack">#09090B</color>
+    <color name="colorPrimaryContainerBlack">#18181C</color>
     <color name="colorOnPrimaryContainerBlack">#FFFFFF</color>
-    <color name="colorSecondaryBlack">#B0B2BD</color>
-    <color name="colorOnSecondaryBlack">#111115</color>
-    <color name="colorSecondaryContainerBlack">#1F2026</color>
+    <color name="colorSecondaryBlack">#A1A1AA</color>
+    <color name="colorOnSecondaryBlack">#09090B</color>
+    <color name="colorSecondaryContainerBlack">#18181C</color>
     <color name="colorOnSecondaryContainerBlack">#FFFFFF</color>
-    <color name="colorSurfaceBlack">#18191E</color>
+    <color name="colorSurfaceBlack">#121215</color>
     <color name="colorOnSurfaceBlack">#FFFFFF</color>
-    <color name="colorSurfaceVariantBlack">#22232A</color>
-    <color name="colorOnSurfaceVariantBlack">#9496A1</color>
-    <color name="colorBackgroundBlack">#0D0E12</color>
+    <color name="colorSurfaceVariantBlack">#18181C</color>
+    <color name="colorOnSurfaceVariantBlack">#A1A1AA</color>
+    <color name="colorBackgroundBlack">#09090B</color>
     <color name="colorErrorBlack">#EF4444</color>
     <color name="colorOnErrorBlack">#FFFFFF</color>
     <color name="colorErrorContainerBlack">#2E1515</color>
     <color name="colorOnErrorContainerBlack">#FCA5A5</color>
-    <color name="colorOutlineBlack">#2D2E37</color>
-    <color name="colorOutlineVariantBlack">#23242C</color>
+    <color name="colorOutlineBlack">#24242A</color>
+    <color name="colorOutlineVariantBlack">#1C1C22</color>
 
-    <!-- Default Theme Colors (Dark Mode) - Modern Obsidian with Gradient Tiles -->
+    <!-- Default Theme Colors (Dark Mode) - Matte Black & White (Refined Obsidian) -->
     <color name="colorPrimary">#FFFFFF</color>
-    <color name="colorOnPrimary">#111115</color>
-    <color name="colorPrimaryContainer">#22232A</color>
+    <color name="colorOnPrimary">#09090B</color>
+    <color name="colorPrimaryContainer">#18181C</color>
     <color name="colorOnPrimaryContainer">#FFFFFF</color>
-    <color name="colorSecondary">#B0B2BD</color>
-    <color name="colorOnSecondary">#111115</color>
-    <color name="colorSecondaryContainer">#1F2026</color>
+    <color name="colorSecondary">#A1A1AA</color>
+    <color name="colorOnSecondary">#09090B</color>
+    <color name="colorSecondaryContainer">#18181C</color>
     <color name="colorOnSecondaryContainer">#FFFFFF</color>
-    <color name="colorSurface">#18191E</color>
+    <color name="colorSurface">#121215</color>
     <color name="colorOnSurface">#FFFFFF</color>
-    <color name="colorSurfaceVariant">#22232A</color>
-    <color name="colorOnSurfaceVariant">#9496A1</color>
-    <color name="colorBackground">#0D0E12</color>
+    <color name="colorSurfaceVariant">#18181C</color>
+    <color name="colorOnSurfaceVariant">#A1A1AA</color>
+    <color name="colorBackground">#09090B</color>
     <color name="colorError">#EF4444</color>
     <color name="colorOnError">#FFFFFF</color>
     <color name="colorErrorContainer">#2E1515</color>
     <color name="colorOnErrorContainer">#FCA5A5</color>
-    <color name="colorOutline">#2D2E37</color>
-    <color name="colorOutlineVariant">#23242C</color>
-    <color name="nav_active_indicator">#2EFFFFFF</color>
+    <color name="colorOutline">#24242A</color>
+    <color name="colorOutlineVariant">#1C1C22</color>
+
+    <!-- Floating Nav Pill Colors -->
+    <color name="nav_active_indicator">#FFFFFF</color>
+    <color name="nav_icon_checked">#09090B</color>
+    <color name="nav_icon_unchecked">#A1A1AA</color>
+    <color name="nav_text_checked">#FFFFFF</color>
+    <color name="nav_text_unchecked">#A1A1AA</color>
+
+    <!-- Circular Progress Ring Colors -->
+    <color name="primary_30">#22232A</color>
+    <color name="primary_35">#2E303A</color>
+    <color name="primary_75">#FFFFFF</color>
 
     <!-- Additional Colors for Better Readability -->
     <color name="attendance_attended">#10B981</color>
@@ -136,13 +147,13 @@
     <color name="attendance_high">#10B981</color>
 
     <!-- Enhanced Attendance Colors for Dark Mode -->
-    <color name="attendance_card_background_dark">#1E293B</color>
-    <color name="attendance_percentage_text_dark">#F8FAFC</color>
+    <color name="attendance_card_background_dark">#121215</color>
+    <color name="attendance_percentage_text_dark">#FFFFFF</color>
     <color name="attendance_percentage_text_high_dark">#10B981</color>
     <color name="attendance_percentage_text_medium_dark">#F59E0B</color>
     <color name="attendance_percentage_text_low_dark">#EF4444</color>
     <color name="attendance_day_selected_indicator_dark">#10B981</color>
-    <color name="attendance_day_background_dark">#1E293B</color>
+    <color name="attendance_day_background_dark">#18181C</color>
     <color name="attendance_day_text_dark">#10B981</color>
     <color name="attendance_subtext_dark">#10B981</color>
 
@@ -155,21 +166,21 @@
     <color name="muted_teal">#06B6D4</color>
 
     <!-- Progress Ring Colors -->
-    <color name="progress_ring_color">#F8FAFC</color> <!-- Dark mode light text -->
-    <color name="progress_ring_background">#1E293B</color> <!-- Dark mode clean background -->
-    <color name="progress_text_color">#F8FAFC</color> <!-- Dark mode light text -->
+    <color name="progress_ring_color">#FFFFFF</color>
+    <color name="progress_ring_background">#18181C</color>
+    <color name="progress_text_color">#FFFFFF</color>
 
     <!-- Calendar Event Colors for Dark Theme -->
-    <color name="holiday_bg">#2D1B1E</color> <!-- Dark red background for dark theme -->
-    <color name="holiday_indicator">#F87171</color> <!-- Lighter red indicator for visibility -->
-    <color name="holiday_text">#F87171</color> <!-- Light red text for dark background -->
-    <color name="instructional_bg">#1B2D1F</color> <!-- Dark green background for dark theme -->
-    <color name="instructional_indicator">#34D399</color> <!-- Lighter green indicator for visibility -->
-    <color name="instructional_text">#34D399</color> <!-- Light green text for dark background -->
-    <color name="event_bg">#1B2832</color> <!-- Dark blue background for dark theme -->
-    <color name="event_indicator">#60A5FA</color> <!-- Lighter blue indicator for visibility -->
-    <color name="event_text">#60A5FA</color> <!-- Light blue text for dark background -->
-    <color name="calendar_selected_bg">#3B82F6</color> <!-- Bright blue for selected day in dark theme -->
-    <color name="calendar_selected_day_text">#FFFFFF</color> <!-- White text on selected day -->
-    <color name="calendar_day_default_text">#E0E0E0</color> <!-- Light gray for day numbers in dark theme -->
+    <color name="holiday_bg">#2D1B1E</color>
+    <color name="holiday_indicator">#F87171</color>
+    <color name="holiday_text">#F87171</color>
+    <color name="instructional_bg">#1B2D1F</color>
+    <color name="instructional_indicator">#34D399</color>
+    <color name="instructional_text">#34D399</color>
+    <color name="event_bg">#1B2832</color>
+    <color name="event_indicator">#60A5FA</color>
+    <color name="event_text">#60A5FA</color>
+    <color name="calendar_selected_bg">#3B82F6</color>
+    <color name="calendar_selected_day_text">#FFFFFF</color>
+    <color name="calendar_day_default_text">#E0E0E0</color>
 </resources>
