@@ -12,19 +12,19 @@
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
 
         <!-- Modern Black & White Color Palette -->
-        <item name="colorPrimary">#111111</item>
+        <item name="colorPrimary">#000000</item>
         <item name="colorOnPrimary">#FFFFFF</item>
         <item name="colorPrimaryContainer">#F3F3F3</item>
-        <item name="colorOnPrimaryContainer">#111111</item>
+        <item name="colorOnPrimaryContainer">#000000</item>
 
         <item name="colorSecondary">#444444</item>
         <item name="colorOnSecondary">#FFFFFF</item>
         <item name="colorSecondaryContainer">#EFEFEF</item>
-        <item name="colorOnSecondaryContainer">#111111</item>
+        <item name="colorOnSecondaryContainer">#000000</item>
 
         <!-- Slightly off-white surface so cards stand out -->
         <item name="colorSurface">#FFFFFF</item>
-        <item name="colorOnSurface">#111111</item>
+        <item name="colorOnSurface">#000000</item>
         <item name="colorSurfaceVariant">#F5F5F7</item>
         <item name="colorOnSurfaceVariant">#555555</item>
 
@@ -46,9 +46,9 @@
         <item name="android:fontFamily">@font/outfit</item>
 
         <!-- Attendance Colors -->
-        <item name="attendance_percentage_text_color">#111111</item>
+        <item name="attendance_percentage_text_color">#000000</item>
         <item name="attendance_subtext_color">#555555</item>
-        <item name="attendance_day_text_color">#333333</item>
+        <item name="attendance_day_text_color">#000000</item>
         <item name="attendance_percentage_text_high_color">#FFFFFF</item>
         <item name="attendance_percentage_text_medium_color">#FFFFFF</item>
         <item name="attendance_percentage_text_low_color">#FFFFFF</item>

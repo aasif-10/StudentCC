@@ -36,6 +36,7 @@
             android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:background="@android:color/transparent"
             app:backgroundTint="@android:color/transparent"
             android:elevation="0dp"
@@ -46,6 +47,8 @@
             app:itemTextColor="@color/selector_navigation_text"
             app:itemActiveIndicatorStyle="@style/Widget.App.NavIndicatorTransparent"
             app:itemIconSize="20dp"
+            app:itemPaddingTop="0dp"
+            app:itemPaddingBottom="0dp"
             app:itemTextAppearanceActive="@style/TextAppearance.App.BottomNav"
             app:itemTextAppearanceInactive="@style/TextAppearance.App.BottomNav" />
 

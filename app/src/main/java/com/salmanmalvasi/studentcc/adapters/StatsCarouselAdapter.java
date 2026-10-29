@@ -55,19 +55,6 @@ public class StatsCarouselAdapter extends RecyclerView.Adapter<StatsCarouselAdap
     @Override
     public void onBindViewHolder(@NonNull StatsViewHolder holder, int position) {
         holder.bind(statsList.get(position), position);
-
-        // Dynamic scale pop entrance
-        holder.itemView.setAlpha(0.6f);
-        holder.itemView.setScaleX(0.92f);
-        holder.itemView.setScaleY(0.92f);
-        holder.itemView.animate()
-                .alpha(1f)
-                .scaleX(1f)
-                .scaleY(1f)
-                .setDuration(280)
-                .setStartDelay(position * 40L)
-                .setInterpolator(new android.view.animation.OvershootInterpolator(1.2f))
-                .start();
     }
 
     @Override

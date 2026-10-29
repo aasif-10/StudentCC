@@ -483,9 +483,6 @@ public class HomeFragment extends Fragment {
             TooltipCompat.setTooltipText(quickSyncButton, "Quick Sync (Ultra-Fast)");
         }
 
-        final android.animation.ObjectAnimator[] rotateAnim = new android.animation.ObjectAnimator[1];
-        final android.animation.ObjectAnimator[] flashPulseAnim = new android.animation.ObjectAnimator[1];
-
         // Normal Sync Action
         if (syncButton != null) {
             syncButton.setOnClickListener(view -> {
@@ -501,13 +498,6 @@ public class HomeFragment extends Fragment {
                 syncButton.setEnabled(false);
                 if (quickSyncButton != null)
                     quickSyncButton.setEnabled(false);
-                if (rotateAnim[0] == null) {
-                    rotateAnim[0] = android.animation.ObjectAnimator.ofFloat(syncButton, "rotation", 0f, 360f);
-                    rotateAnim[0].setDuration(900);
-                    rotateAnim[0].setRepeatCount(android.animation.ValueAnimator.INFINITE);
-                    rotateAnim[0].setInterpolator(new android.view.animation.LinearInterpolator());
-                }
-                rotateAnim[0].start();
                 if (progressHomeSync != null) {
                     progressHomeSync.setVisibility(View.VISIBLE);
                 }
@@ -531,13 +521,12 @@ public class HomeFragment extends Fragment {
                 com.salmanmalvasi.studentcc.sync.DataFreshnessManager.getInstance().invalidateDataset(requireContext(),
                         com.salmanmalvasi.studentcc.sync.DataFreshnessManager.DATASET_MARKS);
 
-                if (flashPulseAnim[0] == null) {
-                    flashPulseAnim[0] = android.animation.ObjectAnimator.ofFloat(quickSyncButton, "rotation", 0f, 360f);
-                    flashPulseAnim[0].setDuration(900);
-                    flashPulseAnim[0].setRepeatCount(android.animation.ValueAnimator.INFINITE);
-                    flashPulseAnim[0].setInterpolator(new android.view.animation.LinearInterpolator());
+                quickSyncButton.setEnabled(false);
+                if (syncButton != null)
+                    syncButton.setEnabled(false);
+                if (progressHomeSync != null) {
+                    progressHomeSync.setVisibility(View.VISIBLE);
                 }
-                flashPulseAnim[0].start();
 
                 Bundle syncBundle = new Bundle();
                 syncBundle.putBoolean("quick_sync", true);
@@ -552,27 +541,14 @@ public class HomeFragment extends Fragment {
                     syncButton.setEnabled(false);
                 if (quickSyncButton != null)
                     quickSyncButton.setEnabled(false);
-                if (rotateAnim[0] != null && !rotateAnim[0].isRunning() && syncButton != null) {
-                    rotateAnim[0].start();
-                }
                 if (progressHomeSync != null) {
                     progressHomeSync.setVisibility(View.VISIBLE);
                 }
             } else {
-                if (syncButton != null) {
+                if (syncButton != null)
                     syncButton.setEnabled(true);
-                    if (rotateAnim[0] != null) {
-                        rotateAnim[0].cancel();
-                        syncButton.setRotation(0f);
-                    }
-                }
-                if (quickSyncButton != null) {
+                if (quickSyncButton != null)
                     quickSyncButton.setEnabled(true);
-                    if (flashPulseAnim[0] != null) {
-                        flashPulseAnim[0].cancel();
-                        quickSyncButton.setRotation(0f);
-                    }
-                }
                 if (progressHomeSync != null) {
                     progressHomeSync.setVisibility(View.GONE);
                 }

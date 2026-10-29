@@ -86,6 +86,11 @@ public class GPACalculatorFragment extends Fragment implements GPACourseAdapter.
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        getParentFragmentManager().setFragmentResultListener("customInsets", this, (requestKey, result) -> {
+            int systemWindowInsetTop = result.getInt("systemWindowInsetTop");
+            view.setPadding(view.getPaddingLeft(), systemWindowInsetTop, view.getPaddingRight(), view.getPaddingBottom());
+        });
+
         initializeViews(view);
         setupRecyclerView();
         setupGradeDropdown();

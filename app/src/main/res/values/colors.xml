@@ -106,16 +106,16 @@
     <color name="colorOutlineVariantBlack">#1C1C22</color>
 
     <!-- Default Theme Colors (Light Mode) - Modern Black & White -->
-    <color name="colorPrimary">#111215</color>
+    <color name="colorPrimary">#000000</color>
     <color name="colorOnPrimary">#FFFFFF</color>
     <color name="colorPrimaryContainer">#ECEEF2</color>
-    <color name="colorOnPrimaryContainer">#111215</color>
+    <color name="colorOnPrimaryContainer">#000000</color>
     <color name="colorSecondary">#444752</color>
     <color name="colorOnSecondary">#FFFFFF</color>
     <color name="colorSecondaryContainer">#EAECEF</color>
-    <color name="colorOnSecondaryContainer">#111215</color>
+    <color name="colorOnSecondaryContainer">#000000</color>
     <color name="colorSurface">#FFFFFF</color>
-    <color name="colorOnSurface">#111215</color>
+    <color name="colorOnSurface">#000000</color>
     <color name="colorSurfaceVariant">#ECEEF2</color>
     <color name="colorOnSurfaceVariant">#6E717C</color>
     <color name="colorBackground">#F4F5F8</color>
@@ -128,14 +128,14 @@
 
     <!-- Floating Nav Pill Colors -->
     <color name="nav_active_indicator">#FFFFFF</color>
-    <color name="nav_icon_checked">#09090B</color>
+    <color name="nav_icon_checked">#000000</color>
     <color name="nav_icon_unchecked">#A1A1AA</color>
-    <color name="nav_text_checked">#09090B</color>
+    <color name="nav_text_checked">#000000</color>
     <color name="nav_text_unchecked">#A1A1AA</color>
 
     <!-- Day/Course Tab Pill Colors -->
     <color name="day_tab_selected_text">#FFFFFF</color>
-    <color name="day_tab_indicator_color">#111111</color>
+    <color name="day_tab_indicator_color">#000000</color>
 
     <!-- Additional Colors for Better Readability -->
     <color name="attendance_attended">#10B981</color>
