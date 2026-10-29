@@ -75,7 +75,17 @@ public class PerformanceCard extends LinearLayout {
 
         this.setOrientation(VERTICAL);
         this.setGravity(Gravity.CENTER);
-        this.setBackground(ContextCompat.getDrawable(this.context, R.drawable.bg_tile_gradient));
+        // Build a solid card background using theme surface + outline colors
+        android.graphics.drawable.GradientDrawable cardBg = new android.graphics.drawable.GradientDrawable();
+        cardBg.setShape(android.graphics.drawable.GradientDrawable.RECTANGLE);
+        cardBg.setCornerRadius(16 * pixelDensity);
+        TypedValue surfaceColor = new TypedValue();
+        getContext().getTheme().resolveAttribute(com.google.android.material.R.attr.colorSurface, surfaceColor, true);
+        cardBg.setColor(surfaceColor.data);
+        TypedValue outlineColor = new TypedValue();
+        getContext().getTheme().resolveAttribute(com.google.android.material.R.attr.colorOutline, outlineColor, true);
+        cardBg.setStroke((int)(1 * pixelDensity), outlineColor.data);
+        this.setBackground(cardBg);
         this.setPadding(
                 (int) (12 * pixelDensity),
                 (int) (12 * pixelDensity),
