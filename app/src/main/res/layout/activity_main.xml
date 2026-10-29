@@ -46,8 +46,6 @@
             app:itemTextColor="@color/selector_navigation_text"
             app:itemActiveIndicatorStyle="@style/Widget.App.NavIndicatorTransparent"
             app:itemIconSize="20dp"
-            app:itemPaddingTop="10dp"
-            app:itemPaddingBottom="8dp"
             app:itemTextAppearanceActive="@style/TextAppearance.App.BottomNav"
             app:itemTextAppearanceInactive="@style/TextAppearance.App.BottomNav" />
 

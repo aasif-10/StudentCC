@@ -61,10 +61,6 @@ public class PerformanceFragment extends Fragment {
         tabLayoutCourses = view.findViewById(R.id.tab_layout_courses);
         LinearLayout header = view.findViewById(R.id.linear_layout_header);
 
-        com.google.android.material.button.MaterialButton helpButton = view.findViewById(R.id.marks_help_button);
-        if (helpButton != null) {
-            helpButton.setOnClickListener(v -> showMarksHelpDialog());
-        }
 
         float pixelDensity = getResources().getDisplayMetrics().density;
 
@@ -229,16 +225,6 @@ public class PerformanceFragment extends Fragment {
                         getParentFragmentManager().setFragmentResult("getUnreadCount", new Bundle());
                     }, throwable -> android.util.Log.e("PerformanceFragment", "Failed to mark marks as read", throwable));
         }
-    }
-
-    private void showMarksHelpDialog() {
-        if (!isAdded()) return;
-        new androidx.appcompat.app.AlertDialog.Builder(requireContext())
-                .setTitle(getString(R.string.help_marks_title))
-                .setMessage(getString(R.string.help_marks_content))
-                .setPositiveButton(getString(R.string.got_it), null)
-                .setIcon(R.drawable.ic_info)
-                .show();
     }
 
     @Override

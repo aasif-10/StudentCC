@@ -261,7 +261,7 @@ public class MainActivity extends AppCompatActivity {
             if (animate) {
                 navGlidingPill.animate()
                         .translationX(targetX)
-                        .setDuration(260)
+                        .setDuration(150)
                         .setInterpolator(new androidx.interpolator.view.animation.FastOutSlowInInterpolator())
                         .start();
             } else {
@@ -641,14 +641,8 @@ public class MainActivity extends AppCompatActivity {
 
             updateGlidingPillPosition(item.getItemId(), true);
             int newIndex = getTabIndex(item.getItemId());
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            if (newIndex > currentTabIndex) {
-                transaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left);
-            } else if (newIndex < currentTabIndex) {
-                transaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right);
-            }
             currentTabIndex = newIndex;
-            transaction
+            getSupportFragmentManager().beginTransaction()
                     .replace(R.id.frame_layout_fragment_container, selectedFragment, selectedFragmentTag)
                     .commit();
 
@@ -664,7 +658,6 @@ public class MainActivity extends AppCompatActivity {
         this.bottomNavigationView.setSelectedItemId(selectedItem);
         this.bottomNavigationView.post(() -> {
             updateGlidingPillPosition(this.bottomNavigationView.getSelectedItemId(), false);
-            adjustBottomNavIconTextGap();
         });
         this.bottomNavigationView.addOnLayoutChangeListener((v, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom) -> {
             if (right - left != oldRight - oldLeft) {

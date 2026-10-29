@@ -532,14 +532,10 @@ public class HomeFragment extends Fragment {
                         com.salmanmalvasi.studentcc.sync.DataFreshnessManager.DATASET_MARKS);
 
                 if (flashPulseAnim[0] == null) {
-                    android.animation.PropertyValuesHolder pvhX = android.animation.PropertyValuesHolder
-                            .ofFloat("scaleX", 1f, 1.22f, 1f);
-                    android.animation.PropertyValuesHolder pvhY = android.animation.PropertyValuesHolder
-                            .ofFloat("scaleY", 1f, 1.22f, 1f);
-                    flashPulseAnim[0] = android.animation.ObjectAnimator.ofPropertyValuesHolder(quickSyncButton, pvhX,
-                            pvhY);
-                    flashPulseAnim[0].setDuration(600);
+                    flashPulseAnim[0] = android.animation.ObjectAnimator.ofFloat(quickSyncButton, "rotation", 0f, 360f);
+                    flashPulseAnim[0].setDuration(900);
                     flashPulseAnim[0].setRepeatCount(android.animation.ValueAnimator.INFINITE);
+                    flashPulseAnim[0].setInterpolator(new android.view.animation.LinearInterpolator());
                 }
                 flashPulseAnim[0].start();
 
@@ -574,8 +570,7 @@ public class HomeFragment extends Fragment {
                     quickSyncButton.setEnabled(true);
                     if (flashPulseAnim[0] != null) {
                         flashPulseAnim[0].cancel();
-                        quickSyncButton.setScaleX(1f);
-                        quickSyncButton.setScaleY(1f);
+                        quickSyncButton.setRotation(0f);
                     }
                 }
                 if (progressHomeSync != null) {
