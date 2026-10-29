@@ -48,7 +48,6 @@ public class GPACalculatorFragment extends Fragment implements GPACourseAdapter.
     private AutoCompleteTextView gradeDropdown;
     private MaterialButton addCourseButton;
     private MaterialButton importCoursesButton;
-    private MaterialButton calculateGPAButton;
     private MaterialButton clearAllButton;
     private MaterialButton calculateCGPAButton;
     private RecyclerView coursesRecyclerView;
@@ -57,10 +56,6 @@ public class GPACalculatorFragment extends Fragment implements GPACourseAdapter.
     private TextInputEditText currentCGPAInput;
     private TextInputEditText currentCreditsInput;
     private TextView cgpaResultText;
-
-    // Current CGPA and Credits Display
-    private TextView currentCGPADisplay;
-    private TextView currentCreditsDisplay;
 
     // CGPA Estimator UI elements
     private TextInputEditText targetCGPAInput;
@@ -103,8 +98,7 @@ public class GPACalculatorFragment extends Fragment implements GPACourseAdapter.
         creditHoursInput = view.findViewById(R.id.credit_hours_input);
         gradeDropdown = view.findViewById(R.id.grade_dropdown);
         addCourseButton = view.findViewById(R.id.add_course_button);
-    importCoursesButton = view.findViewById(R.id.gpa_import_button);
-        calculateGPAButton = view.findViewById(R.id.calculate_gpa_button);
+        importCoursesButton = view.findViewById(R.id.gpa_import_button);
         clearAllButton = view.findViewById(R.id.clear_all_button);
         calculateCGPAButton = view.findViewById(R.id.calculate_cgpa_button);
         coursesRecyclerView = view.findViewById(R.id.courses_recycler_view);
@@ -113,16 +107,6 @@ public class GPACalculatorFragment extends Fragment implements GPACourseAdapter.
         currentCGPAInput = view.findViewById(R.id.current_cgpa_input);
         currentCreditsInput = view.findViewById(R.id.current_credits_input);
         cgpaResultText = view.findViewById(R.id.cgpa_result_text);
-
-        // Initialize help button
-        com.google.android.material.button.MaterialButton helpButton = view.findViewById(R.id.gpa_help_button);
-        if (helpButton != null) {
-            helpButton.setOnClickListener(v -> showGPAHelpDialog());
-        }
-
-        // Initialize Current CGPA and Credits Display
-        currentCGPADisplay = view.findViewById(R.id.current_cgpa_display);
-        currentCreditsDisplay = view.findViewById(R.id.current_credits_display);
 
         // Initialize CGPA Estimator UI elements
         targetCGPAInput = view.findViewById(R.id.target_cgpa_input);
@@ -172,7 +156,6 @@ public class GPACalculatorFragment extends Fragment implements GPACourseAdapter.
         if (importCoursesButton != null) {
             importCoursesButton.setOnClickListener(v -> importCoursesFromMarks());
         }
-        calculateGPAButton.setOnClickListener(v -> calculateGPA());
         clearAllButton.setOnClickListener(v -> clearAll());
         calculateCGPAButton.setOnClickListener(v -> calculateCGPA());
         estimateCGPAButton.setOnClickListener(v -> estimateRequiredGPA());
@@ -244,19 +227,13 @@ public class GPACalculatorFragment extends Fragment implements GPACourseAdapter.
     private void autoFillCurrentData() {
         SharedPreferences sharedPreferences = SettingsRepository.getSharedPreferences(requireContext());
 
-        // Auto-fill current CGPA
         float currentCGPA = sharedPreferences.getFloat("cgpa", 0);
         if (currentCGPA > 0) {
             currentCGPAInput.setText(String.format("%.2f", currentCGPA));
-            currentCGPADisplay.setText(getString(R.string.current_cgpa_display, currentCGPA));
-        } else {
-            currentCGPADisplay.setText("Current CGPA: --");
         }
 
-        // Auto-fill current credits
         float totalCredits;
         try {
-            // Support old integer based credits
             totalCredits = sharedPreferences.getInt("totalCredits", 0);
         } catch (Exception ignored) {
             totalCredits = sharedPreferences.getFloat("totalCredits", 0);
@@ -264,9 +241,6 @@ public class GPACalculatorFragment extends Fragment implements GPACourseAdapter.
 
         if (totalCredits > 0) {
             currentCreditsInput.setText(String.format("%.1f", totalCredits));
-            currentCreditsDisplay.setText(getString(R.string.current_credits_display, totalCredits));
-        } else {
-            currentCreditsDisplay.setText("Total Credits: --");
         }
     }
 
@@ -310,28 +284,6 @@ public class GPACalculatorFragment extends Fragment implements GPACourseAdapter.
         gradeDropdown.setText("");
 
         updateUI();
-    }
-
-    private void calculateGPA() {
-        if (courses.isEmpty()) {
-            Toast.makeText(requireContext(), R.string.add_at_least_one_course, Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        double totalGradePoints = 0;
-        double totalCredits = 0;
-
-        for (GPACourse course : courses) {
-            totalGradePoints += course.getCourseGPA();
-            totalCredits += course.getCreditHours();
-        }
-
-        double semesterGPA = totalCredits > 0 ? totalGradePoints / totalCredits : 0;
-
-        // Show result in a toast
-        DecimalFormat df = new DecimalFormat("#.##");
-        String result = "Semester GPA: " + df.format(semesterGPA) + "\nTotal Credits: " + df.format(totalCredits);
-        Toast.makeText(requireContext(), result, Toast.LENGTH_LONG).show();
     }
 
     private void clearAll() {
@@ -582,14 +534,4 @@ public class GPACalculatorFragment extends Fragment implements GPACourseAdapter.
         updateUI();
     }
 
-    private void showGPAHelpDialog() {
-        if (!isAdded()) return;
-
-        androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(requireContext());
-        builder.setTitle(getString(R.string.help_gpa_title))
-               .setMessage(getString(R.string.help_gpa_content))
-               .setPositiveButton(getString(R.string.got_it), null)
-               .setIcon(R.drawable.ic_info)
-               .show();
-    }
 }
