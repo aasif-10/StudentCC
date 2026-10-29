@@ -133,11 +133,6 @@
     <color name="nav_text_checked">#FFFFFF</color>
     <color name="nav_text_unchecked">#A1A1AA</color>
 
-    <!-- Circular Progress Ring Colors -->
-    <color name="primary_30">#22232A</color>
-    <color name="primary_35">#2E303A</color>
-    <color name="primary_75">#FFFFFF</color>
-
     <!-- Additional Colors for Better Readability -->
     <color name="attendance_attended">#10B981</color>
     <color name="attendance_missed">#EF4444</color>
