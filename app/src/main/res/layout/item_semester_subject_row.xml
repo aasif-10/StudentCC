@@ -44,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:fontFamily="sans-serif-black"
+            android:fontFamily="@font/outfit"
             android:text="88.0%"
             android:textColor="#10B981"
             android:textSize="13sp" />

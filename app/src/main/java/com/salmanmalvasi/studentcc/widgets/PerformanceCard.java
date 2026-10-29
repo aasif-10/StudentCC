@@ -7,7 +7,6 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
-import android.view.animation.Animation;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -16,18 +15,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.content.ContextCompat;
 
-import org.json.JSONObject;
-
 import com.salmanmalvasi.studentcc.R;
-import com.salmanmalvasi.studentcc.animations.AlphaAnimation;
-import com.salmanmalvasi.studentcc.animations.ResizeAnimation;
 
 public class PerformanceCard extends LinearLayout {
     AppCompatTextView title, scoreText, subtitleText;
     Context context;
     ProgressBar scoreProgress;
-
-    JSONObject defaultValues;
 
     public PerformanceCard(Context context) {
         super(context);
@@ -65,7 +58,6 @@ public class PerformanceCard extends LinearLayout {
 
     private void initialize() {
         float pixelDensity = this.context.getResources().getDisplayMetrics().density;
-        this.defaultValues = new JSONObject();
 
         TypedValue colorOnSurface = new TypedValue();
         getContext().getTheme().resolveAttribute(R.attr.colorOnSurface, colorOnSurface, true);
@@ -217,73 +209,11 @@ public class PerformanceCard extends LinearLayout {
     }
 
     public void show() {
-        this.clearAnimation();
-        this.post(() -> {
-            try {
-                LinearLayout card = this;
-                int cardWidth = this.defaultValues.getInt("cardWidth");
-
-                ResizeAnimation expandAnimation = new ResizeAnimation(card, ResizeAnimation.DIRECTION_X, cardWidth, this.defaultValues);
-                AlphaAnimation alphaAnimation = new AlphaAnimation(card, 1);
-
-                expandAnimation.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation animation) {
-                    }
-
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
-                        card.startAnimation(alphaAnimation);
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {
-                    }
-                });
-
-                card.setVisibility(VISIBLE);
-                card.startAnimation(expandAnimation);
-            } catch (Exception ignored) {
-            }
-        });
+        this.setAlpha(1f);
+        this.setVisibility(VISIBLE);
     }
 
     public void hide() {
-        this.clearAnimation();
-        this.post(() -> {
-            try {
-                LinearLayout card = this;
-
-                if (!this.defaultValues.has("cardWidth")) {
-                    LayoutParams layoutParams = (LayoutParams) card.getLayoutParams();
-
-                    this.defaultValues.put("cardWidth", card.getMeasuredWidth());
-                    this.defaultValues.put("marginStart", layoutParams.getMarginStart());
-                    this.defaultValues.put("marginEnd", layoutParams.getMarginEnd());
-                }
-
-                ResizeAnimation compressAnimation = new ResizeAnimation(card, ResizeAnimation.DIRECTION_X, 0, this.defaultValues);
-                AlphaAnimation alphaAnimation = new AlphaAnimation(card, 0);
-
-                alphaAnimation.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation animation) {
-                    }
-
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
-                        card.setVisibility(INVISIBLE);
-                        card.startAnimation(compressAnimation);
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {
-                    }
-                });
-
-                card.startAnimation(alphaAnimation);
-            } catch (Exception ignored) {
-            }
-        });
+        this.setVisibility(GONE);
     }
 }

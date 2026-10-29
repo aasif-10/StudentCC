@@ -107,11 +107,11 @@
 
     <!-- Default Theme Colors (Dark Mode) - Matte Black & White (Refined Obsidian) -->
     <color name="colorPrimary">#FFFFFF</color>
-    <color name="colorOnPrimary">#09090B</color>
+    <color name="colorOnPrimary">#000000</color>
     <color name="colorPrimaryContainer">#18181C</color>
     <color name="colorOnPrimaryContainer">#FFFFFF</color>
     <color name="colorSecondary">#A1A1AA</color>
-    <color name="colorOnSecondary">#09090B</color>
+    <color name="colorOnSecondary">#000000</color>
     <color name="colorSecondaryContainer">#18181C</color>
     <color name="colorOnSecondaryContainer">#FFFFFF</color>
     <color name="colorSurface">#121215</color>
@@ -128,13 +128,13 @@
 
     <!-- Floating Nav Pill Colors -->
     <color name="nav_active_indicator">#FFFFFF</color>
-    <color name="nav_icon_checked">#09090B</color>
+    <color name="nav_icon_checked">#000000</color>
     <color name="nav_icon_unchecked">#A1A1AA</color>
-    <color name="nav_text_checked">#09090B</color>
+    <color name="nav_text_checked">#000000</color>
     <color name="nav_text_unchecked">#A1A1AA</color>
 
     <!-- Day/Course Tab Pill Colors -->
-    <color name="day_tab_selected_text">#09090B</color>
+    <color name="day_tab_selected_text">#000000</color>
     <color name="day_tab_indicator_color">#FFFFFF</color>
 
     <!-- Additional Colors for Better Readability -->

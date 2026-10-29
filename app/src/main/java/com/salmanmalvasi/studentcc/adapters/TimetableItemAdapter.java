@@ -163,17 +163,6 @@ public class TimetableItemAdapter extends RecyclerView.Adapter<TimetableItemAdap
     @Override
     public void onBindViewHolder(@NonNull TimetableItemAdapter.ViewHolder holder, int position) {
         holder.setTimetableItem(this.timetable.get(position), this.status);
-
-        // Dynamic staggered entrance animation
-        holder.itemView.setAlpha(0f);
-        holder.itemView.setTranslationY(24f);
-        holder.itemView.animate()
-                .alpha(1f)
-                .translationY(0f)
-                .setDuration(300)
-                .setStartDelay(Math.min(position * 35L, 250L))
-                .setInterpolator(new android.view.animation.DecelerateInterpolator())
-                .start();
     }
 
     @Override
@@ -312,16 +301,10 @@ public class TimetableItemAdapter extends RecyclerView.Adapter<TimetableItemAdap
                                         // Switch to attended/total format
                                         attendanceText1.setText(String.format(Locale.ENGLISH, "%d/%d",
                                                 course.attendanceAttended, course.attendanceTotal));
-                                        // Add visual feedback
-                                        attendanceText1.setAlpha(0.7f);
-                                        attendanceText1.postDelayed(() -> attendanceText1.setAlpha(1.0f), 150);
                                     } else {
                                         // Switch back to percentage format
                                         attendanceText1
                                                 .setText(new DecimalFormat("#'%'").format(course.attendancePercentage));
-                                        // Add visual feedback
-                                        attendanceText1.setAlpha(0.7f);
-                                        attendanceText1.postDelayed(() -> attendanceText1.setAlpha(1.0f), 150);
                                     }
                                 });
 

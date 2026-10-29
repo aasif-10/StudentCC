@@ -147,7 +147,7 @@
 
     <!-- Enhanced Attendance Colors for Light Mode -->
     <color name="attendance_card_background_light">#F8FAFC</color>
-    <color name="attendance_percentage_text_light">#0F172A</color>
+    <color name="attendance_percentage_text_light">#000000</color>
     <color name="attendance_percentage_text_high_light">#10B981</color>
     <color name="attendance_percentage_text_medium_light">#F59E0B</color>
     <color name="attendance_percentage_text_low_light">#EF4444</color>
@@ -186,9 +186,9 @@
     <color name="calendar_subtext_purple_dark">#8B5CF6</color>
 
     <!-- BLACK THEME - Calendar Day Text Colors -->
-    <color name="calendar_day_text_black_light">#111827</color>
+    <color name="calendar_day_text_black_light">#000000</color>
     <color name="calendar_day_text_black_dark">#F9FAFB</color>
-    <color name="calendar_subtext_black_light">#374151</color>
+    <color name="calendar_subtext_black_light">#000000</color>
     <color name="calendar_subtext_black_dark">#D1D5DB</color>
 
     <!-- Muted Colors for Better Contrast -->
@@ -200,9 +200,9 @@
     <color name="muted_teal">#06B6D4</color>
 
     <!-- Progress Ring Colors -->
-    <color name="progress_ring_color">#0F172A</color>
+    <color name="progress_ring_color">#000000</color>
     <color name="progress_ring_background">#F8FAFC</color>
-    <color name="progress_text_color">#0F172A</color>
+    <color name="progress_text_color">#000000</color>
 
     <!-- Attendance Colors for Light Mode -->
     <color name="attendance_card_background_dark">#F8FAFC</color>
@@ -239,7 +239,7 @@
     <color name="event_text">#0D47A1</color>
     <color name="calendar_selected_bg">#1D4ED8</color>
     <color name="calendar_selected_day_text">#FFFFFF</color>
-    <color name="calendar_day_default_text">#424242</color>
+    <color name="calendar_day_default_text">#000000</color>
 
     <!-- New Colors Added -->
     <color name="attendance_od_color">#FF9800</color>
