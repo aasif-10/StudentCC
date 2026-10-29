@@ -76,6 +76,8 @@ import android.Manifest;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
+    private View bottomNavContainer;
+    private View navGlidingPill;
     CompositeDisposable compositeDisposable = new CompositeDisposable();
     VTOPHelper vtopHelper;
     private boolean classTimeMonitorStarted = false;
@@ -206,9 +208,13 @@ public class MainActivity extends AppCompatActivity {
     
 
     private void hideBottomNavigationView() {
-        this.bottomNavigationView.clearAnimation();
-        this.bottomNavigationView
-                .post(() -> this.bottomNavigationView.animate().translationY(bottomNavigationView.getMeasuredHeight()));
+        View targetView = (this.bottomNavContainer != null) ? this.bottomNavContainer : this.bottomNavigationView;
+        if (targetView == null) return;
+        targetView.clearAnimation();
+        targetView.post(() -> targetView.animate()
+                .translationY(targetView.getMeasuredHeight() + 32 * getResources().getDisplayMetrics().density)
+                .setDuration(220)
+                .start());
 
         if (Build.VERSION.SDK_INT >= 29) {
             this.getWindow().getDecorView().post(() -> {
@@ -222,10 +228,67 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showBottomNavigationView() {
-        this.bottomNavigationView.clearAnimation();
-        this.bottomNavigationView.post(() -> this.bottomNavigationView.animate().translationY(0));
+        View targetView = (this.bottomNavContainer != null) ? this.bottomNavContainer : this.bottomNavigationView;
+        if (targetView == null) return;
+        targetView.clearAnimation();
+        targetView.post(() -> targetView.animate().translationY(0).setDuration(220).start());
 
         this.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+    }
+
+    private void updateGlidingPillPosition(int itemId, boolean animate) {
+        if (navGlidingPill == null || bottomNavigationView == null) return;
+
+        bottomNavigationView.post(() -> {
+            View targetItemView = bottomNavigationView.findViewById(itemId);
+            if (targetItemView == null || targetItemView.getWidth() == 0) {
+                return;
+            }
+
+            int tabWidth = targetItemView.getWidth();
+            int pillMarginHorizontal = (int) (6 * getResources().getDisplayMetrics().density);
+            int pillWidth = tabWidth - (2 * pillMarginHorizontal);
+            if (pillWidth <= 0) pillWidth = tabWidth;
+
+            float targetX = targetItemView.getLeft() + pillMarginHorizontal;
+
+            android.view.ViewGroup.LayoutParams params = navGlidingPill.getLayoutParams();
+            if (params.width != pillWidth) {
+                params.width = pillWidth;
+                navGlidingPill.setLayoutParams(params);
+            }
+
+            if (animate) {
+                navGlidingPill.animate()
+                        .translationX(targetX)
+                        .setDuration(260)
+                        .setInterpolator(new androidx.interpolator.view.animation.FastOutSlowInInterpolator())
+                        .start();
+            } else {
+                navGlidingPill.setTranslationX(targetX);
+            }
+        });
+    }
+
+    private void adjustBottomNavIconTextGap() {
+        if (bottomNavigationView == null) return;
+        bottomNavigationView.post(() -> {
+            for (int i = 0; i < bottomNavigationView.getMenu().size(); i++) {
+                MenuItem item = bottomNavigationView.getMenu().getItem(i);
+                View itemView = bottomNavigationView.findViewById(item.getItemId());
+                if (itemView instanceof android.view.ViewGroup) {
+                    android.view.ViewGroup itemGroup = (android.view.ViewGroup) itemView;
+                    View labelGroup = itemGroup.findViewById(com.google.android.material.R.id.navigation_bar_item_labels_group);
+                    if (labelGroup != null) {
+                        android.view.ViewGroup.MarginLayoutParams lp = (android.view.ViewGroup.MarginLayoutParams) labelGroup.getLayoutParams();
+                        if (lp != null) {
+                            lp.topMargin = (int) (4 * getResources().getDisplayMetrics().density);
+                            labelGroup.setLayoutParams(lp);
+                        }
+                    }
+                }
+            }
+        });
     }
 
     private void restartActivity() {
@@ -424,6 +487,8 @@ public class MainActivity extends AppCompatActivity {
 
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 
+        this.bottomNavContainer = findViewById(R.id.bottom_nav_container);
+        this.navGlidingPill = findViewById(R.id.nav_gliding_pill);
         this.bottomNavigationView = findViewById(R.id.bottom_navigation);
         Menu bottomMenu = this.bottomNavigationView.getMenu();
         int maxNavigationItems = this.bottomNavigationView.getMaxItemCount();
@@ -459,7 +524,8 @@ public class MainActivity extends AppCompatActivity {
 
                     // Broadcast bottom navigation height
                     bottomNavigationView.post(() -> {
-                        customInsets.putInt("bottomNavigationHeight", bottomNavigationView.getMeasuredHeight());
+                        int navHeight = (bottomNavContainer != null) ? bottomNavContainer.getMeasuredHeight() : bottomNavigationView.getMeasuredHeight();
+                        customInsets.putInt("bottomNavigationHeight", navHeight);
                         getSupportFragmentManager().setFragmentResult("customInsets", customInsets);
                     });
 
@@ -573,6 +639,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
+            updateGlidingPillPosition(item.getItemId(), true);
             int newIndex = getTabIndex(item.getItemId());
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             if (newIndex > currentTabIndex) {
@@ -595,6 +662,15 @@ public class MainActivity extends AppCompatActivity {
 
         this.currentTabIndex = getTabIndex(selectedItem);
         this.bottomNavigationView.setSelectedItemId(selectedItem);
+        this.bottomNavigationView.post(() -> {
+            updateGlidingPillPosition(this.bottomNavigationView.getSelectedItemId(), false);
+            adjustBottomNavIconTextGap();
+        });
+        this.bottomNavigationView.addOnLayoutChangeListener((v, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom) -> {
+            if (right - left != oldRight - oldLeft) {
+                updateGlidingPillPosition(this.bottomNavigationView.getSelectedItemId(), false);
+            }
+        });
         handleIntentNavigation(this.getIntent());
         this.vtopHelper = new VTOPHelper(this, new VTOPHelper.Initiator() {
             @Override

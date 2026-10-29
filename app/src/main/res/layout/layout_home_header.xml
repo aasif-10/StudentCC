@@ -39,14 +39,6 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/text_view_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:textColor="?attr/colorOnSurfaceVariant"
-                android:textSize="16sp" />
-
-            <TextView
                 android:id="@+id/text_view_last_updated"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -54,8 +46,6 @@
                 android:textColor="?attr/colorOnSurfaceVariant"
                 android:textSize="11sp"
                 android:visibility="gone" />
-
-
 
         </LinearLayout>
 

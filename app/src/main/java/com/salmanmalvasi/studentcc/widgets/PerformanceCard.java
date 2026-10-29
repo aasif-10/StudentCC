@@ -78,9 +78,9 @@ public class PerformanceCard extends LinearLayout {
         this.setBackground(ContextCompat.getDrawable(this.context, R.drawable.bg_tile_gradient));
         this.setPadding(
                 (int) (12 * pixelDensity),
-                (int) (14 * pixelDensity),
                 (int) (12 * pixelDensity),
-                (int) (14 * pixelDensity)
+                (int) (12 * pixelDensity),
+                (int) (10 * pixelDensity)
         );
 
         // Centered Title
@@ -89,14 +89,15 @@ public class PerformanceCard extends LinearLayout {
                 LayoutParams.WRAP_CONTENT
         );
         titleParams.gravity = Gravity.CENTER_HORIZONTAL;
-        titleParams.setMargins(0, 0, 0, (int) (10 * pixelDensity));
+        titleParams.setMargins(0, 0, 0, (int) (6 * pixelDensity));
         this.title.setLayoutParams(titleParams);
         this.title.setGravity(Gravity.CENTER);
         this.title.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         this.title.setTextColor(colorOnSurface.data);
         this.title.setTextSize(13);
         this.title.setTypeface(this.title.getTypeface(), Typeface.BOLD);
-        this.title.setMaxLines(2);
+        this.title.setSingleLine(true);
+        this.title.setMaxLines(1);
         this.title.setEllipsize(android.text.TextUtils.TruncateAt.END);
         this.addView(this.title);
 
@@ -110,8 +111,8 @@ public class PerformanceCard extends LinearLayout {
         container.setLayoutParams(containerParams);
 
         RelativeLayout.LayoutParams scoreProgressParams = new RelativeLayout.LayoutParams(
-                (int) (76 * pixelDensity),
-                (int) (76 * pixelDensity)
+                (int) (84 * pixelDensity),
+                (int) (84 * pixelDensity)
         );
         scoreProgressParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
         this.scoreProgress.setIndeterminateDrawable(ContextCompat.getDrawable(this.getContext(), R.drawable.background_circular_progress_indeterminate));
@@ -125,7 +126,7 @@ public class PerformanceCard extends LinearLayout {
         this.scoreText.setLayoutParams(scoreTextParams);
         this.scoreText.setGravity(Gravity.CENTER);
         this.scoreText.setTextColor(colorOnSurface.data);
-        this.scoreText.setTextSize(15);
+        this.scoreText.setTextSize(16);
         this.scoreText.setTypeface(this.scoreText.getTypeface(), Typeface.BOLD);
 
         container.addView(this.scoreProgress);

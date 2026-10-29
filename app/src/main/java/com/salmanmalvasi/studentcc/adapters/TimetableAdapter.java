@@ -46,6 +46,8 @@ public class TimetableAdapter extends RecyclerView.Adapter<TimetableAdapter.View
         timetableView.setLayoutParams(timetableParams);
         timetableView.setLayoutManager(new LinearLayoutManager(context));
         timetableView.setClipToPadding(false);
+        float density = context.getResources().getDisplayMetrics().density;
+        timetableView.setPadding(0, 0, 0, (int) (80 * density));
 
         return new ViewHolder(timetableView);
     }

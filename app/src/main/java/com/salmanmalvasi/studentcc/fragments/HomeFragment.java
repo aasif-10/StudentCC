@@ -171,7 +171,7 @@ public class HomeFragment extends Fragment {
                     systemWindowInsetLeft,
                     0,
                     systemWindowInsetRight,
-                    (int) (bottomNavigationHeight + 4 * pixelDensity)));
+                    0));
 
             // Only one listener can be added per requestKey, so we create a duplicate
             getParentFragmentManager().setFragmentResult("customInsets2", result);
@@ -226,8 +226,9 @@ public class HomeFragment extends Fragment {
         nameTextView.setText(toTitleCase(name));
 
         TextView dateTextView = homeFragment.findViewById(R.id.text_view_date);
-        SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE, d MMMM", Locale.getDefault());
-        dateTextView.setText(dateFormat.format(new Date()));
+        if (dateTextView != null) {
+            dateTextView.setVisibility(View.GONE);
+        }
 
         TextView lastUpdatedTextView = homeFragment.findViewById(R.id.text_view_last_updated);
         updateLastUpdatedIndicator(lastUpdatedTextView);

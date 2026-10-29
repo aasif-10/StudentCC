@@ -130,7 +130,7 @@
     <color name="nav_active_indicator">#FFFFFF</color>
     <color name="nav_icon_checked">#09090B</color>
     <color name="nav_icon_unchecked">#A1A1AA</color>
-    <color name="nav_text_checked">#FFFFFF</color>
+    <color name="nav_text_checked">#09090B</color>
     <color name="nav_text_unchecked">#A1A1AA</color>
 
     <!-- Additional Colors for Better Readability -->

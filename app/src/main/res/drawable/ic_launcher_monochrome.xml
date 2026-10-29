@@ -1,0 +1,28 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:pivotX="54"
+        android:pivotY="54">
+        <!-- Modern Velo V / ViT Sync Monochrome Logo -->
+        <!-- Left Wing -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M33,36 L43.5,36 L54,62 L43.5,62 Z" />
+        <!-- Right Wing -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M75,36 L64.5,36 L54,62 L64.5,62 Z" />
+        <!-- Bottom Dynamic Point -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M43.5,62 L64.5,62 L54,76 Z" />
+        <!-- Center Sync Accent Diamond -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M54,40 L58,45 L54,50 L50,45 Z" />
+    </group>
+</vector>
+

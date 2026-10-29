@@ -127,11 +127,11 @@
     <color name="colorOutlineVariant">#EDEFF3</color>
 
     <!-- Floating Nav Pill Colors -->
-    <color name="nav_active_indicator">#111215</color>
-    <color name="nav_icon_checked">#FFFFFF</color>
-    <color name="nav_icon_unchecked">#6E717C</color>
-    <color name="nav_text_checked">#111215</color>
-    <color name="nav_text_unchecked">#6E717C</color>
+    <color name="nav_active_indicator">#FFFFFF</color>
+    <color name="nav_icon_checked">#09090B</color>
+    <color name="nav_icon_unchecked">#A1A1AA</color>
+    <color name="nav_text_checked">#09090B</color>
+    <color name="nav_text_unchecked">#A1A1AA</color>
 
     <!-- Additional Colors for Better Readability -->
     <color name="attendance_attended">#10B981</color>
@@ -209,7 +209,8 @@
     <color name="attendance_subtext_dark">#00D26A</color>
 
     <!-- App Icon Background -->
-    <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="ic_launcher_background">#09090B</color>
+    <color name="launcher_icon_background_color">#09090B</color>
 
     <!-- VTOP Timetable Colors -->
     <color name="vtop_timetable_occupied">#FC6C85</color>

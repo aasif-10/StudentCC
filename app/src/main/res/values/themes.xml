@@ -249,6 +249,13 @@
         <item name="chipStyle">@style/Widget.VTOP.Chip</item>
     </style>
 
+
+    <!-- Transparent active indicator for BottomNavigationView (used with gliding pill) -->
+    <style name="Widget.App.NavIndicatorTransparent" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@android:color/transparent</item>
+        <item name="android:width">0dp</item>
+        <item name="android:height">0dp</item>
+    </style>
     <!-- Active indicator for bottom nav: subtle rounded pill -->
     <style name="Widget.App.NavActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">@color/nav_active_indicator</item>

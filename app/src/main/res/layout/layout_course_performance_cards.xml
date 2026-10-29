@@ -17,35 +17,35 @@
 
         <com.salmanmalvasi.studentcc.widgets.PerformanceCard
             android:id="@+id/performance_card_overall"
-            android:layout_width="145dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             app:title="@string/overall_course_score" />
 
         <com.salmanmalvasi.studentcc.widgets.PerformanceCard
             android:id="@+id/performance_card_theory"
-            android:layout_width="145dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             app:title="@string/theory_weightage" />
 
         <com.salmanmalvasi.studentcc.widgets.PerformanceCard
             android:id="@+id/performance_card_average"
-            android:layout_width="145dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             app:title="Average" />
 
         <com.salmanmalvasi.studentcc.widgets.PerformanceCard
             android:id="@+id/performance_card_lab"
-            android:layout_width="145dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             app:title="@string/lab_weightage" />
 
         <com.salmanmalvasi.studentcc.widgets.PerformanceCard
             android:id="@+id/performance_card_project"
-            android:layout_width="145dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             app:title="@string/project_weightage" />
 

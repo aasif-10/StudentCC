@@ -47,11 +47,11 @@
         <!-- Days Tab Bar Container (Card guarantees 100% boundary clipping to rounded pill) -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="42dp"
+            android:layout_height="40dp"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="6dp"
             android:layout_marginBottom="8dp"
-            app:cardCornerRadius="21dp"
+            app:cardCornerRadius="14dp"
             app:cardElevation="0dp"
             app:strokeWidth="1dp"
             app:strokeColor="?attr/colorOutline"
@@ -68,8 +68,8 @@
                 android:background="@android:color/transparent"
                 app:tabBackground="@null"
                 app:tabIndicator="@drawable/bg_day_tab_indicator"
-                app:tabIndicatorColor="?attr/colorPrimary"
-                app:tabIndicatorFullWidth="true"
+                app:tabIndicatorColor="#FFFFFF"
+                app:tabIndicatorFullWidth="false"
                 app:tabIndicatorGravity="stretch"
                 app:tabIndicatorAnimationMode="elastic"
                 app:tabMode="fixed"
@@ -81,8 +81,8 @@
                 app:tabPaddingTop="0dp"
                 app:tabPaddingBottom="0dp"
                 app:tabRippleColor="@android:color/transparent"
-                app:tabSelectedTextColor="?attr/colorOnPrimary"
-                app:tabTextColor="?attr/colorOnSurfaceVariant"
+                app:tabSelectedTextColor="#09090B"
+                app:tabTextColor="@color/selector_day_tab_text"
                 app:tabTextAppearance="@style/TextAppearance.VTOP.DayTab" />
 
         </com.google.android.material.card.MaterialCardView>
